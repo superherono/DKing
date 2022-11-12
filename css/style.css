@@ -1192,9 +1192,9 @@ body::after {
           justify-content: flex-end;
   border-radius: 50%;
   border: 1px solid transparent;
-  -webkit-transition: border-color 0.3s ease;
-  -o-transition: border-color 0.3s ease;
-  transition: border-color 0.3s ease;
+  -webkit-transition: border-color 0.4s ease 0.3s;
+  -o-transition: border-color 0.4s ease 0.3s;
+  transition: border-color 0.4s ease 0.3s;
 }
 
 .loaded .decor-hero {
@@ -1214,9 +1214,9 @@ body::after {
 .loaded .decor-hero__text {
   opacity: 1;
   visibility: visible;
-  -webkit-transition: visibility 0.4s ease 0.2s, opacity 0.4s ease 0.2s;
-  -o-transition: visibility 0.4s ease 0.2s, opacity 0.4s ease 0.2s;
-  transition: visibility 0.4s ease 0.2s, opacity 0.4s ease 0.2s;
+  -webkit-transition: visibility 0.4s ease 0.3s, opacity 0.4s ease 0.3s;
+  -o-transition: visibility 0.4s ease 0.3s, opacity 0.4s ease 0.3s;
+  transition: visibility 0.4s ease 0.3s, opacity 0.4s ease 0.3s;
 }
 
 .decor-hero__arrow {
