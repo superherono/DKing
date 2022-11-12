@@ -4189,6 +4189,29 @@
         bildSliders();
         initSliders();
     }));
+    let observer = new IntersectionObserver((function(entries) {
+        for (let i in entries) {
+            let el = entries[i].target;
+            if (true === entries[i].isIntersecting) {
+                if (el.dataset.srcset) el.setAttribute("srcset", el.dataset.srcset); else el.removeAttribute("srcset");
+                if (el.dataset.src) el.setAttribute("src", el.dataset.src); else el.removeAttribute("src");
+                el.addEventListener("load", (function() {
+                    el.classList.add("loaded");
+                }), {
+                    passive: true
+                });
+            }
+        }
+    }), {
+        threshold: [ 0 ],
+        rootMargin: "100px 100px 100px 0px"
+    });
+    document.addEventListener("DOMContentLoaded", (function() {
+        let mas = document.querySelectorAll(".lazy");
+        for (let i = 0; i < mas.length; i++) observer.observe(mas[i]);
+    }), {
+        passive: true
+    });
     class ScrollWatcher {
         constructor(props) {
             let defaultConfig = {
