@@ -1637,7 +1637,7 @@ body::after {
   content: "";
   position: absolute;
   z-index: 5;
-  top: -12.4px;
+  top: -11.8px;
   left: 50%;
   -webkit-transform: translate(-31%, 0) rotate(45deg);
       -ms-transform: translate(-31%, 0) rotate(45deg);
