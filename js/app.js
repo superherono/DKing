@@ -4622,10 +4622,12 @@
         let observer = new IntersectionObserver((function(entries) {
             for (let i in entries) {
                 let el = entries[i].target;
+                console.log(el);
                 if (true === entries[i].isIntersecting) {
                     if (el.dataset.srcset) el.setAttribute("srcset", el.dataset.srcset); else el.removeAttribute("srcset");
                     if (el.dataset.src) el.setAttribute("src", el.dataset.src); else el.removeAttribute("src");
                     el.addEventListener("load", (function() {
+                        console.log("loaded");
                         el.classList.add("loaded");
                     }), {
                         passive: true
