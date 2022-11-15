@@ -1695,7 +1695,7 @@ body::after {
   color: var(--main-color);
 }
 
-.item-packages__caption span {
+.item-packages__caption span:first-child {
   position: relative;
   z-index: 5;
   display: block;
@@ -1704,8 +1704,8 @@ body::after {
   background-color: #f8f8f8;
 }
 
-.item-packages__caption span::before,
-.item-packages__caption span::after {
+.item-packages__caption span:first-child::before,
+.item-packages__caption span:first-child::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -1720,11 +1720,11 @@ body::after {
   border-radius: 0.3125rem;
 }
 
-.item-packages__caption span::after {
+.item-packages__caption span:first-child::after {
   bottom: 0;
 }
 
-.item-packages__caption span::before {
+.item-packages__caption span:first-child::before {
   top: 0;
 }
 
