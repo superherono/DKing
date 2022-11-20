@@ -5675,10 +5675,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     padding: 0 2.4375rem;
   }
 
-  .contacts__content {
-    padding-bottom: 4rem;
-  }
-
   .contacts__phones {
     margin-bottom: 1.5rem;
   }
@@ -8143,7 +8139,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .contacts__image {
-    margin: 0 -1rem 1rem;
+    margin: 0 -2rem 1rem;
+  }
+
+  .contacts__image img {
+    max-height: 22.5rem;
   }
 
   .map {
@@ -8155,7 +8155,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .blog__title {
-    margin: 0 0 1rem 0;
+    margin: 0 0 1rem -1rem;
   }
 
   .blog__content {
