@@ -4581,6 +4581,82 @@
                 stop
             });
         }
+        function Grid({swiper, extendParams}) {
+            extendParams({
+                grid: {
+                    rows: 1,
+                    fill: "column"
+                }
+            });
+            let slidesNumberEvenToRows;
+            let slidesPerRow;
+            let numFullColumns;
+            const initSlides = slidesLength => {
+                const {slidesPerView} = swiper.params;
+                const {rows, fill} = swiper.params.grid;
+                slidesPerRow = slidesNumberEvenToRows / rows;
+                numFullColumns = Math.floor(slidesLength / rows);
+                if (Math.floor(slidesLength / rows) === slidesLength / rows) slidesNumberEvenToRows = slidesLength; else slidesNumberEvenToRows = Math.ceil(slidesLength / rows) * rows;
+                if ("auto" !== slidesPerView && "row" === fill) slidesNumberEvenToRows = Math.max(slidesNumberEvenToRows, slidesPerView * rows);
+            };
+            const updateSlide = (i, slide, slidesLength, getDirectionLabel) => {
+                const {slidesPerGroup, spaceBetween} = swiper.params;
+                const {rows, fill} = swiper.params.grid;
+                let newSlideOrderIndex;
+                let column;
+                let row;
+                if ("row" === fill && slidesPerGroup > 1) {
+                    const groupIndex = Math.floor(i / (slidesPerGroup * rows));
+                    const slideIndexInGroup = i - rows * slidesPerGroup * groupIndex;
+                    const columnsInGroup = 0 === groupIndex ? slidesPerGroup : Math.min(Math.ceil((slidesLength - groupIndex * rows * slidesPerGroup) / rows), slidesPerGroup);
+                    row = Math.floor(slideIndexInGroup / columnsInGroup);
+                    column = slideIndexInGroup - row * columnsInGroup + groupIndex * slidesPerGroup;
+                    newSlideOrderIndex = column + row * slidesNumberEvenToRows / rows;
+                    slide.css({
+                        "-webkit-order": newSlideOrderIndex,
+                        order: newSlideOrderIndex
+                    });
+                } else if ("column" === fill) {
+                    column = Math.floor(i / rows);
+                    row = i - column * rows;
+                    if (column > numFullColumns || column === numFullColumns && row === rows - 1) {
+                        row += 1;
+                        if (row >= rows) {
+                            row = 0;
+                            column += 1;
+                        }
+                    }
+                } else {
+                    row = Math.floor(i / slidesPerRow);
+                    column = i - row * slidesPerRow;
+                }
+                slide.css(getDirectionLabel("margin-top"), 0 !== row ? spaceBetween && `${spaceBetween}px` : "");
+            };
+            const updateWrapperSize = (slideSize, snapGrid, getDirectionLabel) => {
+                const {spaceBetween, centeredSlides, roundLengths} = swiper.params;
+                const {rows} = swiper.params.grid;
+                swiper.virtualSize = (slideSize + spaceBetween) * slidesNumberEvenToRows;
+                swiper.virtualSize = Math.ceil(swiper.virtualSize / rows) - spaceBetween;
+                swiper.$wrapperEl.css({
+                    [getDirectionLabel("width")]: `${swiper.virtualSize + spaceBetween}px`
+                });
+                if (centeredSlides) {
+                    snapGrid.splice(0, snapGrid.length);
+                    const newSlidesGrid = [];
+                    for (let i = 0; i < snapGrid.length; i += 1) {
+                        let slidesGridItem = snapGrid[i];
+                        if (roundLengths) slidesGridItem = Math.floor(slidesGridItem);
+                        if (snapGrid[i] < swiper.virtualSize + snapGrid[0]) newSlidesGrid.push(slidesGridItem);
+                    }
+                    snapGrid.push(...newSlidesGrid);
+                }
+            };
+            swiper.grid = {
+                initSlides,
+                updateSlide,
+                updateWrapperSize
+            };
+        }
         function bildSliders() {
             let sliders = document.querySelectorAll('[class*="__swiper"]:not(.swiper-wrapper)');
             if (sliders) if (window.innerWidth > 550) sliders.forEach((slider => {
@@ -4614,6 +4690,38 @@
                 },
                 on: {}
             });
+            if (document.querySelector(".partners__slider ")) {
+                let allPartnerSliders = document.querySelectorAll(".partners__slider");
+                for (let i = 0; i < allPartnerSliders.length; i++) new core(`.partners__row--${i} .partners__slider`, {
+                    modules: [ Navigation, Grid ],
+                    speed: 800,
+                    navigation: {
+                        prevEl: `.partners__row--${i} .partners__arrow--prev`,
+                        nextEl: `.partners__row--${i} .partners__arrow--next`
+                    },
+                    breakpoints: {
+                        320: {
+                            slidesPerView: 2,
+                            slidesPerGroup: 2,
+                            spaceBetween: 12,
+                            grid: {
+                                rows: 4,
+                                fill: "row"
+                            }
+                        },
+                        992: {
+                            slidesPerView: 4,
+                            slidesPerGroup: 4,
+                            spaceBetween: 30,
+                            grid: {
+                                rows: 2,
+                                fill: "row"
+                            }
+                        }
+                    },
+                    on: {}
+                });
+            }
         }
         window.addEventListener("load", (function(e) {
             bildSliders();
@@ -6543,6 +6651,80 @@ PERFORMANCE OF THIS SOFTWARE.
             }));
             modules_flsModules.gallery = galleyItems;
         }
+        function init() {
+            let center = [ 53.935161, 27.4947 ];
+            let map = new ymaps.Map("map", {
+                center,
+                zoom: 16
+            });
+            let placemark = new ymaps.Placemark(center, {}, {
+                iconLayout: "default#image",
+                iconImageHref: "img/icons/pin.svg",
+                iconImageSize: [ 80, 80 ],
+                iconImageOffset: [ -19, -84 ]
+            });
+            map.controls.remove("geolocationControl");
+            map.controls.remove("searchControl");
+            map.controls.remove("trafficControl");
+            map.controls.remove("typeSelector");
+            map.controls.remove("fullscreenControl");
+            map.controls.remove("zoomControl");
+            map.controls.remove("rulerControl");
+            map.behaviors.disable([ "scrollZoom" ]);
+            map.geoObjects.add(placemark);
+        }
+        function initYandexMap() {
+            if (window.yandexMapDidInit) return false;
+            window.yandexMapDidInit = true;
+            const script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async = true;
+            script.src = "https://api-maps.yandex.ru/2.1/?apikey=a9c8f6b4-0344-428b-a80a-969b0501ea50&lang=ru_RU";
+            document.getElementById("map").appendChild(script);
+            initMap();
+        }
+        function initMap() {
+            if (window.ymaps) ymaps.ready(init); else setTimeout((() => {
+                initMap();
+            }), 500);
+        }
+        let psLoadedJs = false;
+        const getExtJs = () => {
+            if (!psLoadedJs) {
+                psLoadedJs = true;
+                window.removeEventListener("scroll", getExtJs, false);
+                window.removeEventListener("touchstart", getExtJs, false);
+                window.removeEventListener("mousemove", getExtJs, false);
+                window.removeEventListener("click", getExtJs, false);
+                window.removeEventListener("keydown", getExtJs, false);
+                clearTimeout(getExtJsTimeout);
+                setTimeout((() => {
+                    initYandexMap();
+                }), 300);
+            }
+        };
+        window.addEventListener("load", (function() {
+            setTimeout((function() {
+                if (document.querySelector(".map")) {
+                    window.addEventListener("scroll", getExtJs, {
+                        passive: true
+                    });
+                    window.addEventListener("touchstart", getExtJs, {
+                        passive: true
+                    });
+                    window.addEventListener("mousemove", getExtJs, {
+                        passive: true
+                    });
+                    window.addEventListener("click", getExtJs, {
+                        passive: true
+                    });
+                    window.addEventListener("keydown", getExtJs, {
+                        passive: true
+                    });
+                }
+            }), 0);
+        }));
+        let getExtJsTimeout = setTimeout(getExtJs, 5e3);
         class DynamicAdapt {
             constructor(type) {
                 this.type = type;

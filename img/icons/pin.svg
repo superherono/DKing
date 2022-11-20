@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="68" fill="none" viewBox="0 0 60 68">
+  <g clip-path="url(#a)">
+    <g filter="url(#b)">
+      <path fill="#F33" d="M30.51 56.523a.5.5 0 0 1-.5.477c-.29 0-.51-.21-.52-.477-.145-3.168-1.756-5.217-4.832-6.147C14.53 47.968 7 38.863 7 28 7 15.297 17.297 5 30 5s23 10.297 23 23c0 10.863-7.53 19.968-17.658 22.376-3.076.93-4.687 2.98-4.83 6.147h-.002Z"/>
+    </g>
+    <path fill="#F33" d="M30.51 56.523a.5.5 0 0 1-.5.477c-.29 0-.51-.21-.52-.477-.145-3.168-1.756-5.217-4.832-6.147C14.53 47.968 7 38.863 7 28 7 15.297 17.297 5 30 5s23 10.297 23 23c0 10.863-7.53 19.968-17.658 22.376-3.076.93-4.687 2.98-4.83 6.147h-.002ZM30 68c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4Z"/>
+    <path fill="#F33" fill-rule="evenodd" d="M30 66a2 2 0 1 0 .09-3.998A2 2 0 0 0 30 66Z" clip-rule="evenodd"/>
+    <g clip-path="url(#c)">
+      <path fill="#fff" fill-rule="evenodd" d="M30 39c-6.627 0-12-5.373-12-12s5.373-12 12-12 12 5.373 12 12-5.373 12-12 12Zm0-2c5.002 0 9.147-3.673 9.884-8.47l-6.677 6.677a1 1 0 0 1-1.414-1.414l8-8a.991.991 0 0 1 .122-.104 9.954 9.954 0 0 0-2.173-5.019.94.94 0 0 1-.035.037l-12 11.998a1 1 0 1 1-1.414-1.415l12-11.997.037-.035a9.954 9.954 0 0 0-5.019-2.173.85.85 0 0 1-.104.122l-8 8a1 1 0 0 1-1.414-1.414l6.676-6.677C23.673 17.853 20 21.998 20 27a10 10 0 0 0 .489 3.097l10.804-10.804a1 1 0 1 1 1.414 1.414L21.366 32.048a10.05 10.05 0 0 0 3.586 3.586l11.34-11.341a1 1 0 0 1 1.415 1.414L26.903 36.511c1 .325 2.045.49 3.097.489Z" clip-rule="evenodd"/>
+    </g>
+  </g>
+  <defs>
+    <clipPath id="a">
+      <path fill="#fff" d="M0 0h60v68H0z"/>
+    </clipPath>
+    <clipPath id="c">
+      <path fill="#fff" d="M0 0h24v24H0z" transform="translate(18 15)"/>
+    </clipPath>
+    <filter id="b" width="58" height="64" x="1" y="-1" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur result="effect1_foregroundBlur_487_318" stdDeviation="3"/>
+    </filter>
+  </defs>
+</svg>
