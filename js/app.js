@@ -6680,7 +6680,8 @@ PERFORMANCE OF THIS SOFTWARE.
             script.type = "text/javascript";
             script.async = true;
             script.src = "https://api-maps.yandex.ru/2.1/?apikey=a9c8f6b4-0344-428b-a80a-969b0501ea50&lang=ru_RU";
-            document.getElementById("map").appendChild(script);
+            const map = document.getElementById("map");
+            if (map) map.appendChild(script);
             initMap();
         }
         function initMap() {
