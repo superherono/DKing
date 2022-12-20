@@ -6838,7 +6838,7 @@ PERFORMANCE OF THIS SOFTWARE.
                 setTimeout((function() {
                     document.addEventListener("watcherCallback", (function(e) {
                         setTimeout((() => {
-                            let targetElements = document.querySelectorAll(".steps._watcher-view");
+                            let targetElements = document.querySelectorAll(".bullet-parent._watcher-view");
                             let i = targetElements.length - 1;
                             let targetElement = targetElements[i];
                             let currentElClassname;
