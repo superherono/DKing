@@ -4566,11 +4566,13 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .divider::before {
     left: 69.66px;
     left: 70px;
+    left: 69px;
   }
 
   .divider::after {
     left: 1.4px;
     left: 0px;
+    left: -1px;
   }
 
   .wrapper--single .divider::after {
@@ -5337,8 +5339,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .divider:after,
   .divider::before {
-    top: -72px;
-    height: calc(100% + 72px);
+    top: -71.4px;
+    height: calc(100% + 71.4px);
   }
 
   .header__body {
