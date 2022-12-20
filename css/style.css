@@ -4577,19 +4577,19 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     left: 0.4px;
   }
 
-  .service__content .divider::before {
+  .divider.service__content::before {
     left: 69px;
   }
 
-  .service__content .divider::after {
+  .divider.service__content::after {
     left: -1px;
   }
 
-  .interior .divider::before {
+  .divider.interior::before {
     left: 68px;
   }
 
-  .interior .divider::after {
+  .divider.interior::after {
     left: -2px;
   }
 
