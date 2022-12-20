@@ -2,20 +2,36 @@
 <html lang="ru">
 
 <head>
-	<title>Стоимость</title>
+	<title>Порядок работы</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20221120100324">
+	<link rel="stylesheet" href="css/style.min.css?_v=20221220204057">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		:root {
+			--black: #000;
+			--pure-white: #fff;
+			--white: #fdfdfd;
+			--gray-dark: #4a4849;
+			--gray-light: #d7d7d7;
+			--gray-gradient: linear-gradient(180deg, rgba(74, 72, 73, 0) 0%, #4a4849 27.4%);
+			--bg-gradient: linear-gradient(210.66deg, rgba(239, 239, 239, 0) 30.9%, #F3F3F3 76.12%);
+			--yellow: #fdd069;
+			--yellow-innactive: rgba(253, 208, 105, 0.4);
+			--hover-color: linear-gradient(270deg, rgba(253, 208, 105, 0) 0%, rgba(253, 208, 105, 0.81) 20.64%, rgba(253, 208, 105, 0.81) 82.56%, rgba(253, 208, 105, 0) 100%);
+
+			--main-color: var(--gray-dark);
+		}
+	</style>
 </head>
 
 <body>
 	<div class="preloader">
 		<div class="preloader__image">
-			<svg xmlns="http://www.w3.org/2000/svg" width="390" height="108" fill="currentColor" viewBox="0 0 390 108">
+			<svg xmlns="http://www.w3.org/2000/svg" width="312" height="86.4" fill="currentColor" viewBox="0 0 390 108">
 				<path fill-rule="evenodd" d="M160.49 76.045c-7.415 0-9.643-2.448-9.643-10.153V23.775c0-2.143.139-4.902 1.32-5.772 1.914-1.41 6.114-1.248 8.685-1.248 4.878 0 11.53 2.082 14.974 5.237 2.019 1.85 3.125 2.447 4.94 5.266 2.539 3.945 3.822 7.97 4.488 12.756.194 1.392.544 5.337.412 6.556-.535 4.942-.102 6.33-1.895 11.943-1.8 5.633-5.15 10.708-10.072 13.844-.766.489-1.38.795-2.199 1.223-2.777 1.452-6.882 2.465-11.01 2.465Zm-30.617 4.388V77.56c.085-.75.447-.505 1.756-.691 5.374-.764 7.646-.936 7.646-8.094V24.151c0-2.184-.199-5.238-1.925-6.522-2.319-1.725-6.392-.882-6.392-1.751v-3.385H158.2c9.28 0 18.381.657 26.238 5.056 3.318 1.857 6.11 4.322 8.427 7.407 3.995 5.322 5.957 12.162 5.957 19 0 6.145-1.593 13.237-3.88 17.148l-1.34 2.368c-.977 1.687-3.019 4.153-4.271 5.461-.285.299-.357.33-.652.576l-1.271 1.185c-.258.226-.3.284-.588.517-3.778 3.07-8.043 5.4-12.683 6.742-5.282 1.529-10.826 2.48-16.66 2.48h-27.604Zm236.622 21.56c-2.477 0-3.704-.074-6.098-.803-1.319-.402-2.716-1.166-3.812-1.928-2.117-1.474-4.193-4.036-4.193-7.548 0-3.036 1.68-4.802 3.163-6.362 2.768-2.912 7.234-2.412 11.422-2.412 3.87 0 8.928.68 11.021 3.832 1.867 2.813 1.596 6.71-.012 9.495-2.208 3.824-6.835 5.726-11.491 5.726Zm-10.487-53.65c0-3.948 1.153-9.655 4.779-11.576 3.487-1.848 7.226.566 8.844 3.803 2.42 4.844 2.745 13.805.023 18.33-3.193 5.308-11.118 5.025-13.175-5.781l-.471-4.775Zm-11.451.753c0 3.496.131 5.762 1.935 8.893 1.49 2.585 3.156 4.134 5.664 5.642.381.229 1.482.776 1.923.883-1.248 1.94-7.47 6.184-9.884 6.768 0 4.321 2.181 7.495 5.567 9.63.666.42 2.605 1.451 3.474 1.526-.231.36-2.754 2.06-3.304 2.456-3.095 2.227-7.786 5.546-7.786 9.703 0 4.148 2.953 8.086 6.197 10.102 11.542 7.175 29.881 1.97 36.909-9.023 1.673-2.618 3.061-5.638 3.061-9.728 0-6.352-3.012-10.033-8.242-11.86-4.462-1.56-9.024-.924-13.696-.925-2.666 0-6.545.362-8.585-.976-4.207-2.758-.219-6.447.147-6.545l6.027.501c5.05 0 10.015-2.1 12.805-4.483 3.834-3.277 5.637-7.298 5.637-12.815 0-3.63-1.016-5.797-2.772-8.524l5.691.46c.381 0 .419-.132.673-.358.248-.222.355-.275.599-.507.913-.872 3.403-4.487 3.403-5.235 0-.14-.394-.831-.482-1.003l-6.377.763c-.995.1-2.269.312-3.268.362-1.194.062-4.137.379-5.066.316-.316-.021-.865-.388-1.199-.565-1.739-.912-3.475-1.492-5.414-1.89-6.934-1.428-15.39.99-19.938 6.616-2.08 2.572-3.699 6.182-3.699 9.816ZM203.768 8.983c0 3.362-.205 2.653 1.049 2.794.344.039.963.144 1.363.212 2.964.511 4.097 1.509 4.097 5.517V70.78c0 4.24-.974 5.282-4.168 5.945-.787.163-2.155.43-2.944.448v3.26h25.314v-3.26c-1.342-.03-3.961-.608-5.107-1.207-1.58-.827-1.885-2.887-1.885-4.684V57.618c2.535 0 2.467.617 4.599 3.616 2.955 4.155 5.854 8.568 8.902 12.804l4.19 5.545c.197.229.265.257.458.528.613.858.736.571 3.066.571l10.487-.125c1.29.002 2.161-.126 3.496-.126v-3.259c-1.445-.033-3.741-.882-4.74-1.464-4.558-2.652-11.941-13.457-15.548-18.051-1.251-1.594-4.021-5.789-4.664-6.557 1.071-1.663 4.639-5.89 6.178-7.49.792-.823 1.493-1.566 2.288-2.384 2.923-3.008 7.092-4.135 10.931-4.928 2.119-.439 1.698.5 1.698-3.5-2.183 0-6.111.389-8.194.38-.462-.002-.997-.03-1.45-.004-.546.03-.659.13-1.321.13-.477.001-.982-.023-1.455-.008-.607.019-.667.126-1.317.135-.482.006-.974-.017-1.456-.01-.65.008-.71.115-1.317.134-1.457.045-4.403-.031-5.549.246v3.26c.689 0 1.912.304 2.428.483 3.172 1.097.742 3.837-.885 6.386l-3.682 5.196c-.425.496-1.217 1.578-1.649 1.921-1.578 1.256-2.782 2.78-5.494 3.437V4.971c-.627.015-1.523.364-2.127.546-.736.222-1.388.401-2.092.582-3.703.955-8.595 2.031-12.452 2.47-.549.062-1.048-.127-1.048.414Zm87.149 28.204v2.758c4.56 1.105 5.665.875 5.665 7.646v21.435c0 7.197-.846 7.308-6.409 8.127-.821.12-.582-.07-.582 3.28h23.505v-3.134c-1.663-.403-3.053-.317-4.295-1.3-.97-.769-1.25-2.842-1.25-4.591V45.084c0-.645 5.145-4.387 8.679-4.387 4.004 0 6.53 2.09 7.475 5.64.303 1.136.601 2.326.601 3.761v21.184c0 1.879-.271 3.67-1.231 4.612-.536.526-1.119.73-1.973.956a8.868 8.868 0 0 1-1.204.252c-1.255.183-1.016-.52-1.016 3.33h22.421c0-3.893.286-3.107-1.327-3.383-1.493-.256-3.223-.502-4.006-1.85-.891-1.536-.694-4.714-.694-7.176 0-5.025.319-18.976-.512-23.284-.781-4.047-2.598-7.508-5.928-9.63-2.493-1.59-4.403-1.808-7.423-1.808-2.751 0-5.792 1.88-7.522 3.084l-6.34 4.438v-7.898l-10.077 2.933-6.557 1.33Zm-30.136-.127v3.01c.97.022 3.553.602 4.361 1.23 1.054.82 1.424 2.413 1.424 4.285V71.03c0 5.01-1.755 5.556-5.492 6.072-1.522.21-1.258-.646-1.258 3.33h24.591c0-4.152.572-2.984-2.397-3.525-3.109-.565-4.263-1.749-4.358-5.12-.119-4.224.004-8.667.004-12.916V33.175l-8.066 2.266-6.466 1.299c-.669.111-1.734.307-2.343.32Zm9.768-12.783c3.753 0 6.63-2.849 6.63-6.142 0-2.206-.353-3.567-1.897-5.172-4.632-4.817-13.01.425-10.299 7.325.813 2.069 3.156 3.989 5.566 3.989ZM47.739 29.56c0-2.604 3.944-3.067 3.944.14 0 .937-.866 1.653-1.633 1.839.14.301.247 1.03.354 1.472.146.604.22.986.382 1.581.852 3.121 1.757 5.16 3.48 7.837 1.43-.397 5.24-4.36 6.257-5.94-.602-.935-.952-.275-.952-2.263 0-.78.859-1.697 2.04-1.697.766 0 1.768.898 1.768 1.697 0 1.524-.482 2.405-2.312 2.405-.58 2.59-.544 4.962-.544 7.637 0 .839 1.274.105 1.951-.234 1.968-.986 3.085-1.706 4.756-3.116.302-.255.64-.564.91-.752-.29-.448-.68-.786-.68-1.555 0-.888.795-1.98 1.631-1.98 1.21 0 2.312.351 2.312 1.98 0 1.907-1.837 2.407-3.128 1.697-.178.695-4.56 6.589-4.624 9.617-.796 0-.928-.124-1.628-.146-3.5-.109-8.927.004-12.516.004-2.527 0-4.642-.141-7.073-.141h-7.208l-.775-2.447c-1.308-3.458-1.58-3.622-3.17-6.746-.748.181-.468.283-1.495.283-2.135 0-2.547-3.89.164-4.069 1.071-.07 2.012.9 2.012 2.089 0 .847-.262.844-.408 1.414.298.208.416.361.756.628 1.621 1.268 4.73 3.737 6.588 3.898.135-1.689.544-1.229.544-5.092 0-1.26-.187-2.05-.272-3.11-.95 0-1.202.033-1.755-.438-1.36-1.158-.637-3.664 1.211-3.664 2.227 0 2.609 3.358.952 3.818.102.398.341.62.582.95l1.354 1.704c1.036 1.21 2.72 3.181 4.32 3.569l1.18-2.31c.44-.908.691-1.614 1.015-2.621.273-.85.581-1.98.763-2.883.191-.943.578-2.113.578-3.076-.846-.205-1.631-.922-1.631-1.98ZM49.17 0h.778c.942.085 1.908.485 2.784 1.311 2.293 2.162 1.235 6.697-1.322 7.317.104 1.3 7.445 13.326 8.27 14.593.455.698 1.694 2.59 2.202 2.944.642-.178 4.616-3.04 5.224-3.478l3.675-2.826c.418-.326.777-.639 1.166-.91-.49-.76-.689-1.01-.922-2.012-.377-1.625.089-2.99 1.157-4.107 4.272-4.472 10.522 2.118 6.6 6.157-.708.73-1.512 1.422-2.62 1.519.039 1.771 3.719 19.275 4.353 20.649 1.41-.342 6.2-2.788 7.537-3.618l2.39-1.333c-.983-1.527-1.31-3.046-.458-4.862.177-.377.188-.399.421-.692 3.044-3.824 8.198-1.213 8.198 2.725 0 2.31-2.002 4.526-4.216 4.526-1.994 0-1.211-.124-2.448-.424-.041.515-.313.952-.506 1.454-1.71 4.446-3.01 9.9-1.942 14.67l-78.339-.142v-2.122c0-4.942-4.1-12.131-4.488-13.86-1.491.361-.39.424-2.72.424-3.328 0-5.867-5.59-1.989-8.29 2.58-1.796 5.968-.519 6.841 2.255.776 2.462-.417 3.3-.5 4.338l8.393 4.567c.41.183.889.434 1.263.525.925-2.004 3.516-13.06 4.002-15.356l1.03-5.293c-1.127 0-2.284-.65-2.893-1.235-1.212-1.165-1.323-2.374-1.323-3.857 0-1.962 2.21-4.101 4.489-4.101 3.224 0 5.466 3.65 4.12 6.548-.217.47-.455.585-.584 1.09.69.98 8.328 6.83 9.792 7.637.485-.754 1.237-1.262 1.768-1.98 3.829-5.17 6.46-10.233 9.385-15.982-1.76-.489-2.72-2.469-2.72-4.668 0-2.014 1.916-3.9 4.152-4.101ZM6.803 57.138c0 3.38 2.214 1.82 2.315 3.816.418 8.274-.265 5.937-1.581 7.413-.622.698-.598 1.84-.598 2.773 28.526 0 56.656-.425 85.139-.425 0-1.94-.373-2.482-1.657-3.51-.62-.498-.566-.723-.668-1.71-.072-.692-.189-1.375-.116-2.268.217-2.69-.238-2.407 1.047-3.72 1.23-1.257 1.573-3.076.85-3.076H6.803v.707Zm28.013 23.054H96.29c2.128 0 2.944-5.124.08-6.165-1.152-.42-11.436-.2-13.137-.2-6.007 0-11.602-.14-17.544-.14h-17.68c-5.923 0-11.541-.142-17.545-.142H12.783c-2.954 0-5.654-.123-8.706-.143-1.667-.011-2.351.307-2.952 1.456-.508.973-.744 2.586-.221 3.685.989 2.08 4.548 1.508 7.39 1.508 2.947 0 5.895.007 8.841 0 1.481-.004 2.627.141 4.216.141h13.465Z" clip-rule="evenodd" />
 			</svg>
 		</div>
@@ -23,14 +39,38 @@
 			<div class="preloader__border"></div>
 		</div>
 	</div>
-	<div class="wrapper">
+
+	<script>
+		let preloader = document.querySelector('.preloader__border');
+
+		preloader.classList.add('loaded-1')
+		document.addEventListener("readystatechange", function() {
+			let state = document.readyState;
+			if (state === 'interactive') {
+				preloader.classList.add('loaded-2')
+			}
+			if (state === 'complete') {
+				preloader.classList.add('loaded-3')
+				setTimeout(() => {
+					preloader.closest('.preloader').classList.add('loaded');
+				}, 500);
+			}
+
+		});
+	</script>
+	<div class="wrapper wrapper--home">
 		<header class="header" data-lp>
 			<div class="header__body">
 				<div class="header__left">
-					<a href="" class="header__logo">
-						<svg width="80" height="22">
-							<use xlink:href="img/icons/icons.svg#svg-logo"></use>
-						</svg>
+					<a href="#" class="header__logo">
+						<!-- <picture>
+					<source srcset="img/logo.svg" media="(min-width: 1700px)" type="image/webp">
+					<source srcset="img/logo-vertical.svg.svg" media="(max-width: 1700px)" type="image/webp">
+					<img src="img/.jpg" alt="">
+				</picture> -->
+						<!-- <svg width="80" height="22">
+					<use xlink:href="img/icons/icons.svg#svg-logo"></use>
+				</svg> -->
 					</a>
 					<div class="header__actions">
 						<div class="header__phones">
@@ -96,160 +136,162 @@
 			</div>
 		</header>
 		<main class="order">
-			<section class="order__first-steps order__steps--01 steps" data-watch data-watch-threshold=".4">
-				<div class="steps__container">
-					<div class="steps__body divider">
-						<h1 class="steps__title steps__title--visible title"><span>Порядок работы</span></h1>
-						<div class="steps__content">
-							<h2 class="steps__label" data-animate="fade-up" data-watch>Дизайн интерьера квартир и домов. Дизайн интерьера квартир и домов. Дизайн интерьера квартир и домов. </h2>
-							<div class="steps__items">
-								<div class="steps__item item-step" data-animate="fade-up" data-watch>
-									<div class="item-step__number"> 1 этап</div>
-									<div class="item-step__info">
-										<h3 class="item-step__caption">Заключение договора</h3>
-										<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+			<div class="order__wrapper">
+				<section class="order__first-steps order__steps--01 steps" data-watch data-watch-threshold=".8">
+					<div class="steps__container">
+						<div class="steps__body divider">
+							<h1 class="steps__title steps__title--visible title"><span>Порядок работы</span></h1>
+							<div class="steps__content">
+								<h2 class="steps__label" data-animate="fade-up" data-watch>Дизайн интерьера квартир и домов. Дизайн интерьера квартир и домов. Дизайн интерьера квартир и домов. </h2>
+								<div class="steps__items">
+									<div class="steps__item item-step" data-animate="fade-up" data-watch>
+										<div class="item-step__number"> 1 этап</div>
+										<div class="item-step__info">
+											<h3 class="item-step__caption">Заключение договора</h3>
+											<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+										</div>
 									</div>
-								</div>
-								<div class="steps__item item-step" data-animate="fade-up" data-watch>
-									<div class="item-step__number"> 2 этап</div>
-									<div class="item-step__info">
-										<h3 class="item-step__caption">Планировочные решения</h3>
-										<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+									<div class="steps__item item-step" data-animate="fade-up" data-watch>
+										<div class="item-step__number"> 2 этап</div>
+										<div class="item-step__info">
+											<h3 class="item-step__caption">Планировочные решения</h3>
+											<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+										</div>
 									</div>
-								</div>
-								<div class="steps__item item-step" data-animate="fade-up" data-watch>
-									<div class="item-step__number"> 3 этап</div>
-									<div class="item-step__info">
-										<h3 class="item-step__caption">Заключение договора</h3>
-										<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+									<div class="steps__item item-step" data-animate="fade-up" data-watch>
+										<div class="item-step__number"> 3 этап</div>
+										<div class="item-step__info">
+											<h3 class="item-step__caption">Заключение договора</h3>
+											<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+										</div>
 									</div>
-								</div>
-								<div class="steps__item item-step" data-animate="fade-up" data-watch>
-									<div class="item-step__number"> 4 этап</div>
-									<div class="item-step__info">
-										<h3 class="item-step__caption">Планировочные решения</h3>
-										<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+									<div class="steps__item item-step" data-animate="fade-up" data-watch>
+										<div class="item-step__number"> 4 этап</div>
+										<div class="item-step__info">
+											<h3 class="item-step__caption">Планировочные решения</h3>
+											<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+										</div>
 									</div>
-								</div>
-								<div class="steps__item item-step" data-animate="fade-up" data-watch>
-									<div class="item-step__number"> 5 этап</div>
-									<div class="item-step__info">
-										<h3 class="item-step__caption">Планировочные решения</h3>
-										<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+									<div class="steps__item item-step" data-animate="fade-up" data-watch>
+										<div class="item-step__number"> 5 этап</div>
+										<div class="item-step__info">
+											<h3 class="item-step__caption">Планировочные решения</h3>
+											<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
-			<!-- /.steps -->
-			<section class="order__steps order__steps--02 steps" data-watch data-watch-threshold=".7">
-				<div class="steps__container">
-					<div class="steps__body divider">
-						<h1 class="steps__title title"><span>Порядок работы</span></h1>
-						<div class="steps__content">
-							<h2 class="steps__label">Дизайн интерьера квартир и домов. Дизайн интерьера квартир и домов. Дизайн интерьера квартир и домов. </h2>
-							<div class="steps__items">
-								<div class="steps__item item-step" data-animate="fade-up" data-watch>
-									<div class="item-step__number"> 1 этап</div>
-									<div class="item-step__info">
-										<h3 class="item-step__caption">Заключение договора</h3>
-										<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+				</section>
+				<!-- /.steps -->
+				<section class="order__steps order__steps--02 steps" data-watch data-watch-threshold=".9">
+					<div class="steps__container">
+						<div class="steps__body divider">
+							<h1 class="steps__title title"><span>Порядок работы</span></h1>
+							<div class="steps__content">
+								<h2 class="steps__label">Дизайн интерьера квартир и домов. Дизайн интерьера квартир и домов. Дизайн интерьера квартир и домов. </h2>
+								<div class="steps__items">
+									<div class="steps__item item-step" data-animate="fade-up" data-watch>
+										<div class="item-step__number"> 1 этап</div>
+										<div class="item-step__info">
+											<h3 class="item-step__caption">Заключение договора</h3>
+											<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+										</div>
 									</div>
-								</div>
-								<div class="steps__item item-step" data-animate="fade-up" data-watch>
-									<div class="item-step__number"> 2 этап</div>
-									<div class="item-step__info">
-										<h3 class="item-step__caption">Планировочные решения</h3>
-										<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+									<div class="steps__item item-step" data-animate="fade-up" data-watch>
+										<div class="item-step__number"> 2 этап</div>
+										<div class="item-step__info">
+											<h3 class="item-step__caption">Планировочные решения</h3>
+											<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+										</div>
 									</div>
-								</div>
-								<div class="steps__item item-step" data-animate="fade-up" data-watch>
-									<div class="item-step__number"> 3 этап</div>
-									<div class="item-step__info">
-										<h3 class="item-step__caption">Заключение договора</h3>
-										<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+									<div class="steps__item item-step" data-animate="fade-up" data-watch>
+										<div class="item-step__number"> 3 этап</div>
+										<div class="item-step__info">
+											<h3 class="item-step__caption">Заключение договора</h3>
+											<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
-			<!-- /.steps -->
-			<section class="order__steps order__steps--03 steps" data-watch data-watch-threshold=".7">
-				<div class="steps__container">
-					<div class="steps__body divider">
-						<h1 class="steps__title title"><span>Порядок работы</span></h1>
-						<div class="steps__content">
-							<h2 class="steps__label">Дизайн интерьера квартир и домов. Дизайн интерьера квартир и домов. Дизайн интерьера квартир и домов. </h2>
-							<div class="steps__items">
-								<div class="steps__item item-step" data-animate="fade-up" data-watch>
-									<div class="item-step__number"> 1 этап</div>
-									<div class="item-step__info">
-										<h3 class="item-step__caption">Заключение договора</h3>
-										<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+				</section>
+				<!-- /.steps -->
+				<section class="order__steps order__steps--03 steps" data-watch data-watch-threshold="1">
+					<div class="steps__container">
+						<div class="steps__body divider">
+							<h1 class="steps__title title"><span>Порядок работы</span></h1>
+							<div class="steps__content">
+								<h2 class="steps__label">Дизайн интерьера квартир и домов. Дизайн интерьера квартир и домов. Дизайн интерьера квартир и домов. </h2>
+								<div class="steps__items">
+									<div class="steps__item item-step" data-animate="fade-up" data-watch>
+										<div class="item-step__number"> 1 этап</div>
+										<div class="item-step__info">
+											<h3 class="item-step__caption">Заключение договора</h3>
+											<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+										</div>
 									</div>
-								</div>
-								<div class="steps__item item-step" data-animate="fade-up" data-watch>
-									<div class="item-step__number"> 2 этап</div>
-									<div class="item-step__info">
-										<h3 class="item-step__caption">Планировочные решения</h3>
-										<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+									<div class="steps__item item-step" data-animate="fade-up" data-watch>
+										<div class="item-step__number"> 2 этап</div>
+										<div class="item-step__info">
+											<h3 class="item-step__caption">Планировочные решения</h3>
+											<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+										</div>
 									</div>
-								</div>
-								<div class="steps__item item-step" data-animate="fade-up" data-watch>
-									<div class="item-step__number"> 3 этап</div>
-									<div class="item-step__info">
-										<h3 class="item-step__caption">Заключение договора</h3>
-										<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+									<div class="steps__item item-step" data-animate="fade-up" data-watch>
+										<div class="item-step__number"> 3 этап</div>
+										<div class="item-step__info">
+											<h3 class="item-step__caption">Заключение договора</h3>
+											<p class="item-step__descr">На данном этапе закладывается основа всего дальнейшего хода работ, а также вносится предоплата.</p>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
-			<!-- /.steps -->
-			<section class="order__steps order__steps--timeline steps" data-watch data-watch-threshold="1">
-				<div class="steps__container">
-					<div class="steps__body divider">
-						<h1 class="steps__title title"><span>Порядок работы</span></h1>
-						<div class="steps__content">
-							<h2 class="steps__label">Дизайн интерьера квартир и домов. Дизайн интерьера квартир и домов. Дизайн интерьера квартир и домов. </h2>
-							<div class="steps__timeline timeline">
-								<div class="timeline__rows">
-									<div class="timeline__row" data-animate="fade-up" data-watch>
-										<div class="timeline__item">
-											до 50 м.кв.
+				</section>
+				<!-- /.steps -->
+				<section class="order__steps order__steps--04 order__steps--timeline steps" data-watch data-watch-threshold=".7">
+					<div class="steps__container">
+						<div class="steps__body divider">
+							<h1 class="steps__title steps__title--no-offset steps__title--visible title"><span>Сроки</span></h1>
+							<div class="steps__content">
+								<h2 class="steps__label">Дизайн интерьера квартир и домов. Дизайн интерьера квартир и домов. Дизайн интерьера квартир и домов. </h2>
+								<div class="steps__timeline timeline">
+									<div class="timeline__rows">
+										<div class="timeline__row" data-animate="fade-up" data-watch>
+											<div class="timeline__item">
+												до 50 м.кв.
+											</div>
+											<div class="timeline__item">
+												50-100 м.кв.
+											</div>
+											<div class="timeline__item">
+												свыше 120 м.кв.
+											</div>
 										</div>
-										<div class="timeline__item">
-											50-100 м.кв.
-										</div>
-										<div class="timeline__item">
-											свыше 120 м.кв.
+										<div class="timeline__row" data-animate="fade-up" data-watch>
+											<div class="timeline__item">
+												2 - 2,5 мес.
+											</div>
+											<div class="timeline__item">
+												2,5 - 3 мес.
+											</div>
+											<div class="timeline__item">
+												от 3 мес.
+											</div>
 										</div>
 									</div>
-									<div class="timeline__row" data-animate="fade-up" data-watch>
-										<div class="timeline__item">
-											2 - 2,5 мес.
-										</div>
-										<div class="timeline__item">
-											2,5 - 3 мес.
-										</div>
-										<div class="timeline__item">
-											от 3 мес.
-										</div>
-									</div>
+									<div class="timeline__note"><i>*</i> Точный срок оговаривается в день консультации</div>
 								</div>
-								<div class="timeline__note"><i>*</i> Точный срок оговаривается в день консультации</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
-			<!-- /.steps -->
+				</section>
+				<!-- /.steps -->
+			</div>
 
 			<div class="main-bullets"></div>
 			<ul class="fixed-social">
@@ -310,7 +352,7 @@
 						<p>ОГРН 111111111111111</p>
 					</div>
 					<div class="footer__col">
-						<h3>Юридический адрес:</h3>
+						<h3 class="footer__label">Юридический адрес:</h3>
 						<p>220017, Российская Федерация, г. Санкт-Петербург,</p>
 						<p>наб. Обводного канала, д.185М офис 520</p>
 					</div>
@@ -383,7 +425,7 @@
 		<div class="popup__wrapper">
 			<div class="popup__content">
 				<button data-close type="button" class="popup__close">
-					<svg width="20" height="20">
+					<svg width="13" height="13">
 						<use xlink:href="img/icons/icons.svg#svg-close"></use>
 					</svg>
 				</button>
@@ -418,7 +460,7 @@
 		<div class="popup__wrapper">
 			<div class="popup__content">
 				<button data-close type="button" class="popup__close">
-					<svg width="20" height="20">
+					<svg width="13" height="13">
 						<use xlink:href="img/icons/icons.svg#svg-close"></use>
 					</svg>
 				</button>
@@ -477,7 +519,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20221120100324"></script>
+	<script src="js/app.min.js?_v=20221220204057"></script>
 </body>
 
 </html>

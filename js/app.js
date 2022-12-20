@@ -254,6 +254,13 @@
         function addTouchClass() {
             if (isMobile.any()) document.documentElement.classList.add("touch");
         }
+        function addLoadedClass() {
+            window.addEventListener("load", (function() {
+                setTimeout((function() {
+                    document.documentElement.classList.add("loaded");
+                }), 0);
+            }));
+        }
         function getHash() {
             if (location.hash) return location.hash.replace("#", "");
         }
@@ -4730,12 +4737,10 @@
         let observer = new IntersectionObserver((function(entries) {
             for (let i in entries) {
                 let el = entries[i].target;
-                console.log(el);
                 if (true === entries[i].isIntersecting) {
                     if (el.dataset.srcset) el.setAttribute("srcset", el.dataset.srcset); else el.removeAttribute("srcset");
                     if (el.dataset.src) el.setAttribute("src", el.dataset.src); else el.removeAttribute("src");
                     el.addEventListener("load", (function() {
-                        console.log("loaded");
                         el.classList.add("loaded");
                     }), {
                         passive: true
@@ -6642,6 +6647,10 @@ PERFORMANCE OF THIS SOFTWARE.
                         licenseKey: "7EC452A9-0CFD441C-BD984C7C-17C8456E",
                         speed: 800,
                         selector: ".portfolio-single__image-ibg",
+                        thumbHeight: "130px",
+                        thumbWidth: "210",
+                        animateThumb: false,
+                        addClass: "lg-custom-thumbnails",
                         mobileSettings: {
                             showCloseIcon: true,
                             controls: false
@@ -6822,32 +6831,26 @@ PERFORMANCE OF THIS SOFTWARE.
                 if (watcherItem.classList.contains("_watcher-view")) spanChild.classList.add("active");
             }
         }
-        let loaderTimer = false;
-        setTimeout((() => {
-            loaderTimer = true;
-        }), 2e3);
-        function loaderCheker() {
-            console.log(loaderTimer);
-            if (loaderTimer) document.documentElement.classList.add("loaded"); else setTimeout((() => {
-                loaderCheker();
-            }), 500);
-        }
         window.addEventListener("load", (function() {
             if (window.innerWidth > 1200) {
                 initMainBullets();
                 let dotts = document.querySelectorAll("[data-parent]");
                 setTimeout((function() {
                     document.addEventListener("watcherCallback", (function(e) {
-                        const entry = e.detail.entry;
-                        const targetElement = entry.target;
-                        let currentElClassname = targetElement.classList[1];
-                        if (currentElClassname && !targetElement.hasAttribute("data-fade-up")) {
-                            let currentDott = document.querySelector(`[data-parent="${currentElClassname}"]`);
-                            if (currentDott) {
-                                removeClasses(dotts, "active");
-                                currentDott.classList.add("active");
+                        setTimeout((() => {
+                            let targetElements = document.querySelectorAll(".steps._watcher-view");
+                            let i = targetElements.length - 1;
+                            let targetElement = targetElements[i];
+                            let currentElClassname;
+                            if (targetElement) currentElClassname = targetElement.classList[1]; else return;
+                            if (currentElClassname && !targetElement.hasAttribute("data-animate")) {
+                                let currentDott = document.querySelector(`[data-parent="${currentElClassname}"]`);
+                                if (currentDott) {
+                                    removeClasses(dotts, "active");
+                                    currentDott.classList.add("active");
+                                }
                             }
-                        }
+                        }), 200);
                     }));
                 }), 500);
             }
@@ -6864,9 +6867,6 @@ PERFORMANCE OF THIS SOFTWARE.
                     }));
                 }
             }
-            setTimeout((function() {
-                loaderCheker();
-            }), 0);
             let eventType = document.documentElement.classList.contains("touch") ? "click" : "mouseover";
             if (window.innerWidth > 479) {
                 const blueprintsBlock = document.querySelector(".blueprints__list");
@@ -6938,6 +6938,7 @@ PERFORMANCE OF THIS SOFTWARE.
         window["FLS"] = false;
         isWebp();
         addTouchClass();
+        addLoadedClass();
         menuInit();
         menuSublistsInit();
         fullVHfix();
