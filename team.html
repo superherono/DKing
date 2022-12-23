@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20221220221502">
+	<link rel="stylesheet" href="css/style.min.css?_v=20221223232804">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -247,7 +247,7 @@
 				</div>
 			</div>
 			<div class="team__decor">
-				<picture><source class="lazy" data-srcset="img/decor2.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img class="lazy" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="img/decor2.jpg" alt=""></picture>
+				<picture><source class="lazy" data-srcset="img/chandelier-team.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img class="lazy" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="img/chandelier-team.jpg" alt=""></picture>
 			</div>
 		</main>
 		<footer class="page__footer footer">
@@ -458,7 +458,99 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20221220221502"></script>
+
+	<div aria-hidden="true" class="popup notification">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<svg width="13" height="13">
+						<use xlink:href="img/icons/icons.svg#svg-close"></use>
+					</svg>
+				</button>
+				<div class="notification__inner">
+					<div class="notification__descr descr-notification">
+						<div class="descr-notification__block">
+							<h3 class="descr-notification__title"><span>кто такие dking?</span></h3>
+							<p class="descr-notification__text">Dking - минская студия, которая радует своих клиентов с 2013г. Наши проекты находятся по всему миру в России, Германии, Франции, Австрии, Бельгии, Испании, Украине, Чехии и Беларуси.</p>
+							<p class="descr-notification__text descr-notification__text--accent">Работаем по принципу - «пока не устроит клиента».</p>
+							<p class="descr-notification__text">Для нас в одной студии уже тесно и нам пора расширяться...</p>
+							<p class="descr-notification__text descr-notification__text--accent">Поэтому с гордостью хотим объявить, что открываем ещё одну студию Dking, но уже в Питере.</p>
+						</div>
+						<div class="descr-notification__block">
+							<h3 class="descr-notification__title"><span>условия акции</span></h3>
+							<p class="descr-notification__text descr-notification__text--accent">Заявки принимаются до 1 апреля 2023 года.</p>
+							<p class="descr-notification__text">Если вы не окажетесь в числе первых 10 заказов, в любом случае высылайте свои данные, мы подготовим для вас интересное и выгодное предложение.</p>
+							<p class="descr-notification__text">Все заявки будут обработаны, и мы обязательно с вами свяжемся!</p>
+						</div>
+					</div>
+					<div class="notification__info info-notification">
+						<h3 class="info-notification__title">скоро открытие</h3>
+						<div class="info-notification__open">
+							<p>В честь открытия дарим</p>
+							<span>БОЛЬШИЕ СКИДКИ!</span>
+						</div>
+						<div class="info-notification__offers">
+							<div class="info-notification__offer">
+								<div class="info-notification__inner">
+									<div class="info-notification__top">50%</div>
+									<div class="info-notification__bottom">ПЕРВЫЕ 5 ЗАЯВОК</div>
+								</div>
+							</div>
+							<div class="info-notification__offer">
+								<div class="info-notification__inner">
+									<div class="info-notification__top">30%</div>
+									<div class="info-notification__bottom">ВТОРЫЕ 5 ЗАЯВОК</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<form action="#" class="notification__form form-notification">
+						<div class="form-notification__rows">
+							<div class="form-notification__row">
+								<label class="form-notification__label" for="">Представьтесь, пожалуйста</label>
+								<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Имя" class="input">
+							</div>
+							<div class="form-notification__row">
+								<label class="form-notification__label" for="">Контактный телефон</label>
+								<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="+7 (921) " class="input js-phone">
+							</div>
+							<div class="form-notification__row">
+								<label class="form-notification__label" for="">Площадь объекта, м2</label>
+								<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="40" class="input">
+							</div>
+							<div class="form-notification__row">
+								<label class="form-notification__label" for="">Адрес объекта или название ЖК</label>
+								<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Каскад" class="input">
+							</div>
+							<div class="form-notification__row form-notification__select">
+								<label class="form-notification__label" for="">Тарифный план</label>
+								<select name="form[]" class="form">
+									<option value="1" selected>Standart</option>
+									<option value="2">Basic</option>
+									<option value="3">Premium</option>
+								</select>
+							</div>
+							<div class="form-notification__row form-notification__row--upload">
+								<label for="file" class="form-notification__label form-notification__label--file">
+									<span>Добавить фото/скан строительного плана</span>
+									<span class="js-upload-text">Выбрать файл</span>
+								</label>
+								<input id="file" autocomplete="off" type="file" name="form[]" data-error="Ошибка" placeholder="" class="input">
+							</div>
+						</div>
+						<button type="submit" class="form-notification__button">
+							<span>Отправить</span>
+							<svg width="36" height="8">
+								<use xlink:href="img/icons/icons.svg#svg-form-arr"></use>
+							</svg>
+						</button>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20221223232804"></script>
 </body>
 
 </html>
