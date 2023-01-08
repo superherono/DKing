@@ -3448,7 +3448,6 @@
                     }));
                     showMoreBlocksRegular.length ? initItems(showMoreBlocksRegular) : null;
                     document.addEventListener("click", showMoreActions);
-                    window.addEventListener("resize", showMoreActions);
                     mdQueriesArray = dataMediaQueries(showMoreBlocks, "showmoreMedia");
                     if (mdQueriesArray && mdQueriesArray.length) {
                         mdQueriesArray.forEach((mdQueriesItem => {
@@ -3530,6 +3529,7 @@
                             if (!showMoreContent.classList.contains("_slide")) {
                                 showMoreBlock.classList.contains("_showmore-active") ? _slideUp(showMoreContent, showMoreSpeed, hiddenHeight) : _slideDown(showMoreContent, showMoreSpeed, hiddenHeight);
                                 showMoreBlock.classList.toggle("_showmore-active");
+                                console.log("slide");
                             }
                         }
                     } else if ("resize" === targetType) {
@@ -9946,7 +9946,25 @@ PERFORMANCE OF THIS SOFTWARE.
         const galleries = document.querySelectorAll("[data-gallery]");
         if (galleries.length) {
             let galleyItems = [];
-            galleries.forEach((gallery => {
+            if (window.innerWidth < 991.98) {
+                console.log("touch");
+                galleries.forEach((gallery => {
+                    galleyItems.push({
+                        gallery,
+                        galleryClass: lightgallery_es5(gallery, {
+                            plugins: [ lg_thumbnail_min ],
+                            licenseKey: "7EC452A9-0CFD441C-BD984C7C-17C8456E",
+                            speed: 800,
+                            selector: ".portfolio-single__image-ibg",
+                            addClass: "lg-custom-thumbnails",
+                            mobileSettings: {
+                                showCloseIcon: true,
+                                controls: false
+                            }
+                        })
+                    });
+                }));
+            } else galleries.forEach((gallery => {
                 galleyItems.push({
                     gallery,
                     galleryClass: lightgallery_es5(gallery, {
@@ -9954,14 +9972,10 @@ PERFORMANCE OF THIS SOFTWARE.
                         licenseKey: "7EC452A9-0CFD441C-BD984C7C-17C8456E",
                         speed: 800,
                         selector: ".portfolio-single__image-ibg",
-                        thumbHeight: "130px",
                         thumbWidth: "210",
+                        thumbHeight: "130px",
                         animateThumb: false,
-                        addClass: "lg-custom-thumbnails",
-                        mobileSettings: {
-                            showCloseIcon: true,
-                            controls: false
-                        }
+                        addClass: "lg-custom-thumbnails"
                     })
                 });
             }));
