@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20221226212848">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230108085407">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -244,14 +244,16 @@
 			<div class="footer__body">
 				<div class="footer__actions">
 					<div class="footer__order">
-						<h3 class="footer__label">Консультация или заказ дизайн-проекта</h3>
+						<h3 class="footer__label only-desktop">Консультация или заказ дизайн-проекта</h3>
+						<h3 class="footer__label only-mob">Для клиентов</h3>
 						<div class="footer__phones">
 							<a href="tel:+79216481288" class="footer__phone">+7 (921) 648-12-88</a>
 							<a href="tel:+79216481288" class="footer__phone">+7 (921) 648-12-88</a>
 						</div>
 					</div>
 					<div class="footer__partners">
-						<h3 class="footer__label">Контактный телефон для партнёров</h3>
+						<h3 class="footer__label only-desktop">Контактный телефон для партнёров</h3>
+						<h3 class="footer__label only-mob">Для партнёров</h3>
 						<div class="footer__phones">
 							<a href="tel:+79216481288" class="footer__phone">+7 (921) 648-12-88</a>
 							<a href="tel:+79216481288" class="footer__phone">+7 (921) 648-12-88</a>
@@ -273,6 +275,11 @@
 					</div>
 				</div>
 				<div class="footer__details" data-da=".footer, 768, last">
+					<button type="button" class="footer__close-details">
+						<svg width="20" height="20">
+							<use xlink:href="img/icons/icons.svg#svg-close"></use>
+						</svg>
+					</button>
 					<div class="footer__col">
 						<h3 class="footer__label">Реквизиты:</h3>
 						<p>ООО «ДиКинг»</p>
@@ -292,11 +299,6 @@
 						<p>220117, г. Санкт-Петербург, наб. Обводного <br> канала,185М-12</p>
 						<p>БИК: UNBSKKHY21</p>
 					</div>
-					<button type="button" class="footer__close-details">
-						<svg width="20" height="20">
-							<use xlink:href="img/icons/icons.svg#svg-close"></use>
-						</svg>
-					</button>
 				</div>
 				<div class="footer__right">
 					<ul class="footer__social social">
@@ -468,7 +470,7 @@
 						</div>
 						<div class="descr-notification__block">
 							<h3 class="descr-notification__title"><span>условия акции</span></h3>
-							<p class="descr-notification__text descr-notification__text--accent">Заявки принимаются до 1 апреля 2023 года.</p>
+							<p class="descr-notification__text descr-notification__text--accent">Заявки принимаются до 30 апреля 2023 года.</p>
 							<p class="descr-notification__text">Если вы не окажетесь в числе первых 10 заказов, в любом случае высылайте свои данные, мы подготовим для вас интересное и выгодное предложение.</p>
 							<p class="descr-notification__text">Все заявки будут обработаны, и мы обязательно с вами свяжемся!</p>
 						</div>
@@ -516,8 +518,8 @@
 								<label class="form-notification__label" for="">Тарифный план</label>
 								<select name="form[]" class="form">
 									<option value="1" selected>Standart</option>
-									<option value="2">Basic</option>
-									<option value="3">Premium</option>
+									<option value="2">Premium</option>
+									<option value="3">King Size</option>
 								</select>
 							</div>
 							<div class="form-notification__row form-notification__row--upload">
@@ -535,12 +537,20 @@
 							</svg>
 						</button>
 					</form>
+					<p class="notification__mobile-text">Заявки принимаются <br> до 1 апреля 2023 года.</p>
+					<p class="notification__note">*скидки действуют для объектов от 40 кв.м по ТП «Standart» и ТП «Premium»</p>
+					<button type="submit" class="notification__show-form form-notification__button">
+						<span>Оставить заявку</span>
+						<svg width="36" height="8">
+							<use xlink:href="img/icons/icons.svg#svg-form-arr"></use>
+						</svg>
+					</button>
 				</div>
 
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20221226212848"></script>
+	<script src="js/app.min.js?_v=20230108085407"></script>
 </body>
 
 </html>

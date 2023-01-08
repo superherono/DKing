@@ -3417,60 +3417,25 @@
             document.documentElement.classList.remove("menu-open");
         }
         function menuSublistsInit() {
-            function hideAllSublists() {
-                subLists.forEach((element => {
-                    element.setAttribute("hidden", "");
-                }));
-            }
             const menuItems = document.querySelectorAll(".menu__item");
             const subLists = document.querySelectorAll(".menu__sublist");
-            if (document.documentElement.classList.contains("touch")) {
-                hideAllSublists();
-                document.addEventListener("click", (function(e) {
-                    let target = e.target;
-                    let currentItem = target.closest(".menu__item");
-                    if (currentItem) {
-                        let currentSublist = currentItem.querySelector(".menu__sublist");
-                        if (currentSublist && !target.classList.contains("menu__sublink")) {
-                            e.preventDefault();
-                            if (!currentItem.classList.contains("active")) if (!currentSublist.hasAttribute("hidden")) {
-                                removeClasses(menuItems, "active");
-                                currentItem.classList.add("active");
-                                _slideToggle(currentSublist);
-                            } else {
-                                removeClasses(menuItems, "active");
-                                currentItem.classList.add("active");
-                                hideAllSublists();
-                                _slideToggle(currentSublist);
-                            } else {
-                                _slideToggle(currentSublist);
-                                removeClasses(menuItems, "active");
-                            }
-                        }
-                    } else {
-                        hideAllSublists();
+            subLists.forEach((element => {
+                element.removeAttribute("hidden");
+            }));
+            document.addEventListener("click", (function(e) {
+                let target = e.target;
+                let currentItem = target.closest(".menu__item");
+                let currentSublist;
+                if (currentItem) currentSublist = currentItem.querySelector(".menu__sublist");
+                if (currentSublist && !target.classList.contains("menu__sublink")) e.preventDefault();
+                if (currentItem) if (!currentItem.classList.contains("active")) {
+                    let sublist = currentItem.querySelector(".menu__sublist");
+                    if (sublist) {
                         removeClasses(menuItems, "active");
+                        currentItem.classList.add("active");
                     }
-                }));
-            } else {
-                subLists.forEach((element => {
-                    element.removeAttribute("hidden");
-                }));
-                document.addEventListener("click", (function(e) {
-                    let target = e.target;
-                    let currentItem = target.closest(".menu__item");
-                    let currentSublist;
-                    if (currentItem) currentSublist = currentItem.querySelector(".menu__sublist");
-                    if (currentSublist && !target.classList.contains("menu__sublink")) e.preventDefault();
-                    if (currentItem) if (!currentItem.classList.contains("active")) {
-                        let sublist = currentItem.querySelector(".menu__sublist");
-                        if (sublist) {
-                            removeClasses(menuItems, "active");
-                            currentItem.classList.add("active");
-                        }
-                    } else removeClasses(menuItems, "active"); else removeClasses(menuItems, "active");
-                }));
-            }
+                } else removeClasses(menuItems, "active"); else removeClasses(menuItems, "active");
+            }));
         }
         function showMore() {
             window.addEventListener("load", (function(e) {
@@ -10288,6 +10253,11 @@ PERFORMANCE OF THIS SOFTWARE.
                     } else uploadText.textContent = `Выбрать файл`;
                 }));
             }
+            let notificationBtn = document.querySelector(".notification__show-form");
+            let notificationForm = notificationBtn.closest(".popup__content");
+            if (notificationBtn && notificationForm) notificationBtn.addEventListener("click", (function(e) {
+                notificationForm.classList.add("active");
+            }));
         }));
         window["FLS"] = false;
         isWebp();
