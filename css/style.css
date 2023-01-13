@@ -9130,6 +9130,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     right: -2px;
   }
 
+  .aditional-services__title span {
+    line-height: 131%;
+  }
+
+  .aditional-services__title::after {
+    left: 48.8px;
+  }
+
   .aditional-services__row {
     padding: 1rem 0;
   }
