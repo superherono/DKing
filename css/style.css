@@ -2260,7 +2260,7 @@ body::after {
 .item-packages::after {
   content: "";
   position: absolute;
-  top: -5.8px;
+  top: -5.5px;
   left: 0;
   width: 100%;
   height: 5px;
@@ -2916,12 +2916,22 @@ body::after {
   background-color: var(--yellow);
 }
 
-.no-webp .order{
-  background: url("../img/order-bg2.jpg") 0 0/cover fixed no-repeat; }
-
 .order {
   position: relative;
   color: var(--white);
+}
+
+.no-webp .order::before{
+  background: url("../img/order-bg2.jpg") 0 0/cover fixed no-repeat; }
+
+.order::before {
+  content: "";
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .order::after {
@@ -8074,7 +8084,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .compare__body::before {
     content: "После";
     position: absolute;
-    z-index: 4;
+    z-index: 6;
     top: -24px;
     right: 21px;
     max-width: 94px;
@@ -8433,7 +8443,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .steps__body::after {
     height: 0.03125rem;
-    top: 1px;
+    top: -2px;
     width: calc(100% + 48px);
   }
 
@@ -8694,6 +8704,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   [class*=__container] {
     padding: 0 1rem;
+  }
+
+  .blog [class*=__container] {
+    padding: 0;
   }
 
   .news [class*=__container],
@@ -9271,7 +9285,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .order__wrapper {
     margin-top: 3.75rem;
-    margin-bottom: 3.125rem;
+    margin-bottom: 1.25rem;
   }
 
   .order__first-steps .steps__body {
@@ -12400,7 +12414,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
 .webp .footer{ background: url(../img/hero/03.webp) center/cover no-repeat; }
 
-.webp .order{ background: url(../img/order-bg2.webp) 0 0/cover fixed no-repeat; }
+.webp .order::before{ background: url(../img/order-bg2.webp) 0 0/cover fixed no-repeat; }
 
 .webp .lg-outer .lg-item:not(.lg-start-end-progress){ background: url(data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAACwBQCdASogACAAPpFCnEolo6KhqAgAsBIJaQAD5dDxrXM99232GfVDjLF0EQDwsC0CXKtWlgAA/vV76pcYbjjsL88+3qb/4UfhRX+dwASYANdOF+J5Nu61NxB7TUbHeCQeee2d4nX3M/8oPzSbTnBOl/xCNiQkRhkYBtGvv3/fXfn2CbNj/EPmnHMb/H7zFQx28TJK5yXYt1B6zlKYbIeBfYPo1h1tsfJDbPjNrzTs7O1elyh7eF4fdYd8hFly7AAAAA==) no-repeat scroll center center transparent; }
 
