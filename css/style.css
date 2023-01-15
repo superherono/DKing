@@ -8795,7 +8795,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .title::after {
     height: 50px;
-    top: 5px;
+    top: 5.3px;
     left: 48.8px;
   }
 
