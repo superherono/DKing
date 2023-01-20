@@ -8771,15 +8771,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .title::after {
-    height: 50px;
-    top: 5.3px;
-    left: 48.8px;
+    display: none;
   }
 
   .title span {
-    padding-left: 3.5625rem;
     padding-right: 0.9375rem;
-    line-height: 133%;
+    line-height: 131%;
+    padding-left: 58.4px;
+    border: none;
+    background: url("../img/icons/title-decor-mob.svg") 0 0/contain no-repeat;
   }
 
   .divider::before {
