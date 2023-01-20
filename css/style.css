@@ -8779,6 +8779,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     line-height: 133%;
     padding-left: 58.4px;
     border: none;
+    min-height: 1.5625rem;
     background: url("../img/icons/title-decor-mob.svg") 0 0/contain no-repeat;
   }
 
