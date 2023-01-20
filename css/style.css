@@ -4488,7 +4488,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .hero__body::after {
-    top: 72px;
+    top: 73px;
   }
 
   .hero__body::before {
@@ -7589,6 +7589,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     left: 0;
     width: 100%;
     height: 0.0625rem;
+    opacity: 0.7;
     background: -webkit-gradient(linear, right top, left top, color-stop(-2.1%, rgba(74, 72, 73, 0.15)), color-stop(10.45%, #4A4849), color-stop(89.68%, #4A4849), to(rgba(74, 72, 73, 0.15)));
     background: -o-linear-gradient(right, rgba(74, 72, 73, 0.15) -2.1%, #4A4849 10.45%, #4A4849 89.68%, rgba(74, 72, 73, 0.15) 100%);
     background: linear-gradient(270deg, rgba(74, 72, 73, 0.15) -2.1%, #4A4849 10.45%, #4A4849 89.68%, rgba(74, 72, 73, 0.15) 100%);
@@ -7826,6 +7827,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 @media (max-width: 61.99875em) {
   [class*=__container] {
     margin: 0px auto;
+  }
+
+  [class*=__container].contacts__container {
+    padding: 0;
   }
 
   .header__body::before {
@@ -8120,10 +8125,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .partners__wrapper {
     padding: 0 1.4375rem;
-  }
-
-  .contacts__container {
-    padding: 0;
   }
 
   .contacts__location {
@@ -9923,6 +9924,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     background: -webkit-gradient(linear, right top, left top, color-stop(-2.1%, rgba(74, 72, 73, 0.15)), color-stop(10.45%, #4A4849), color-stop(89.68%, #4A4849), to(rgba(74, 72, 73, 0.15)));
     background: -o-linear-gradient(right, rgba(74, 72, 73, 0.15) -2.1%, #4A4849 10.45%, #4A4849 89.68%, rgba(74, 72, 73, 0.15) 100%);
     background: linear-gradient(270deg, rgba(74, 72, 73, 0.15) -2.1%, #4A4849 10.45%, #4A4849 89.68%, rgba(74, 72, 73, 0.15) 100%);
+    opacity: 0.7;
   }
 
   .contacts__image {
@@ -10193,8 +10195,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .service__content::before {
-    top: -72px;
-    height: calc(100% + 72px);
+    top: -9px;
+    height: calc(100% + 9px);
   }
 
   .service__image {
@@ -10209,14 +10211,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .portfolio__body::before {
     content: "";
-    top: -72px;
-    height: calc(100% + 72px);
+    top: 0;
+    height: 100%;
   }
 
   .portfolio-single__body::before {
     content: "";
-    top: -72px;
-    height: calc(100% + 72px);
+    top: 0;
+    height: 100%;
   }
 
   .portfolio-single__content {
@@ -10239,13 +10241,13 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .news__body::before {
     content: "";
-    top: -72px;
-    height: calc(100% + 72px);
+    top: 0;
+    height: 100%;
   }
 
   .team__content::before {
-    top: -72px;
-    height: calc(100% + 72px);
+    top: -8px;
+    height: calc(100% + 8px);
   }
 
   .team__visual {
@@ -10254,20 +10256,20 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .partners__body::before {
     content: "";
-    top: -72px;
-    height: calc(100% + 72px);
+    top: 0;
+    height: 100%;
   }
 
   .contacts__body::before {
     content: "";
-    top: -72px;
-    height: calc(100% + 72px);
+    top: 0;
+    height: 100%;
   }
 
   .blog__body::before {
     content: "";
-    top: -72px;
-    height: calc(100% + 72px);
+    top: 0;
+    height: 100%;
   }
 
   .blog__content {
@@ -10418,7 +10420,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .steps__body::after {
     left: -24px;
-    top: 0.5px;
+    top: 2px;
   }
 
   .news {
@@ -12213,6 +12215,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     background: -webkit-gradient(linear, right top, left top, color-stop(-2.1%, rgba(74, 72, 73, 0.15)), color-stop(10.45%, #4A4849), color-stop(89.68%, #4A4849), to(rgba(74, 72, 73, 0.15)));
     background: -o-linear-gradient(right, rgba(74, 72, 73, 0.15) -2.1%, #4A4849 10.45%, #4A4849 89.68%, rgba(74, 72, 73, 0.15) 100%);
     background: linear-gradient(270deg, rgba(74, 72, 73, 0.15) -2.1%, #4A4849 10.45%, #4A4849 89.68%, rgba(74, 72, 73, 0.15) 100%);
+    opacity: 0.7;
   }
 
   .contacts__clients {
