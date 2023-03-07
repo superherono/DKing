@@ -3552,6 +3552,10 @@
                 return self.indexOf(item) === index;
             }));
         }
+        function indexInParent(parent, element) {
+            const array = Array.prototype.slice.call(parent.children);
+            return Array.prototype.indexOf.call(array, element);
+        }
         function dataMediaQueries(array, dataSetValue) {
             const media = Array.from(array).filter((function(item, index, self) {
                 if (item.dataset[dataSetValue]) return item.dataset[dataSetValue].split(",")[0];
@@ -10272,6 +10276,20 @@ PERFORMANCE OF THIS SOFTWARE.
             if (notificationBtn && notificationForm) notificationBtn.addEventListener("click", (function(e) {
                 notificationForm.classList.add("active");
             }));
+            if (window.innerWidth > 991) {
+                const lgThumbs = document.querySelectorAll(".lg-thumb-item");
+                const lgWrapper = document.querySelector(".lg-thumb.lg-group");
+                let lastIndex = 0;
+                let distance = 0;
+                lgThumbs.forEach((lgThumb => {
+                    lgThumb.addEventListener("click", (function(e) {
+                        let clickedIndex = indexInParent(lgWrapper, lgThumb);
+                        distance = lastIndex < clickedIndex ? distance + 210 : distance - 210;
+                        lgWrapper.style.transform = `translate3D(-${distance}px, 0px, 0)`;
+                        lastIndex = clickedIndex;
+                    }));
+                }));
+            }
         }));
         window["FLS"] = false;
         isWebp();
