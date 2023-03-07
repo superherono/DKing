@@ -10276,6 +10276,13 @@ PERFORMANCE OF THIS SOFTWARE.
             if (notificationBtn && notificationForm) notificationBtn.addEventListener("click", (function(e) {
                 notificationForm.classList.add("active");
             }));
+            const notificationPopup = document.querySelector(".notification");
+            if (notificationPopup) {
+                const timeout = notificationPopup.dataset.timeout;
+                setTimeout((() => {
+                    modules_flsModules.popup.open(".notification");
+                }), timeout);
+            }
             if (window.innerWidth > 991) {
                 const lgThumbs = document.querySelectorAll(".lg-thumb-item");
                 const lgWrapper = document.querySelector(".lg-thumb.lg-group");
