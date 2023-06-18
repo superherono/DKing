@@ -3552,10 +3552,6 @@
                 return self.indexOf(item) === index;
             }));
         }
-        function indexInParent(parent, element) {
-            const array = Array.prototype.slice.call(parent.children);
-            return Array.prototype.indexOf.call(array, element);
-        }
         function dataMediaQueries(array, dataSetValue) {
             const media = Array.from(array).filter((function(item, index, self) {
                 if (item.dataset[dataSetValue]) return item.dataset[dataSetValue].split(",")[0];
@@ -3615,8 +3611,8 @@
                     closeEsc: true,
                     bodyLock: true,
                     hashSettings: {
-                        location: true,
-                        goHash: true
+                        location: false,
+                        goHash: false
                     },
                     on: {
                         beforeOpen: function() {},
@@ -8040,6 +8036,34 @@
                     on: {}
                 });
             }
+            if (document.querySelector(".reviews-page__slider ")) new core(".reviews-page__slider ", {
+                modules: [ Pagination ],
+                observer: true,
+                observeParents: true,
+                spaceBetween: 20,
+                autoHeight: true,
+                speed: 800,
+                pagination: {
+                    el: ".reviews-page__dots",
+                    clickable: true
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                        autoHeight: true
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 30
+                    },
+                    992: {
+                        slidesPerView: 3,
+                        spaceBetween: 40
+                    }
+                },
+                on: {}
+            });
         }
         window.addEventListener("load", (function(e) {
             bildSliders();
@@ -10272,7 +10296,8 @@ PERFORMANCE OF THIS SOFTWARE.
                 }));
             }
             let notificationBtn = document.querySelector(".notification__show-form");
-            let notificationForm = notificationBtn.closest(".popup__content");
+            let notificationForm;
+            if (notificationBtn) notificationForm = notificationBtn.closest(".popup__content");
             if (notificationBtn && notificationForm) notificationBtn.addEventListener("click", (function(e) {
                 notificationForm.classList.add("active");
             }));
@@ -10284,17 +10309,25 @@ PERFORMANCE OF THIS SOFTWARE.
                 }), timeout);
             }
             if (window.innerWidth > 991) {
-                const lgThumbs = document.querySelectorAll(".lg-thumb-item");
                 const lgWrapper = document.querySelector(".lg-thumb.lg-group");
-                let lastIndex = 0;
                 let distance = 0;
-                lgThumbs.forEach((lgThumb => {
-                    lgThumb.addEventListener("click", (function(e) {
-                        let clickedIndex = indexInParent(lgWrapper, lgThumb);
-                        distance = lastIndex < clickedIndex ? distance + 210 : distance - 210;
-                        lgWrapper.style.transform = `translate3D(-${distance}px, 0px, 0)`;
-                        lastIndex = clickedIndex;
-                    }));
+                const lg = document.querySelector(".portfolio-single__gallery");
+                if (lg) lg.addEventListener("lgBeforeSlide", (event => {
+                    let {index, prevIndex} = event.detail;
+                    distance = prevIndex < index ? distance + 210 : distance - 210;
+                    lgWrapper.style.transform = `translate3D(-${distance}px, 0px, 0)`;
+                }));
+            }
+            const rating = document.querySelector(".reviews-page");
+            if (rating) {
+                const ratingItems = document.querySelectorAll(".item-reviews__rating");
+                if (ratingItems) ratingItems.forEach((ratingItem => {
+                    let currentScore = ratingItem.dataset.rating;
+                    if (currentScore) {
+                        let curentActiveRatingElement = ratingItem.querySelector(".item-reviews__active-rating");
+                        const ratingActiveWidth = currentScore / .05;
+                        curentActiveRatingElement.style.width = `${ratingActiveWidth}%`;
+                    }
                 }));
             }
         }));
