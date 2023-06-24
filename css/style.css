@@ -11960,6 +11960,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     height: auto;
   }
 
+  .dev-design-review__image img {
+    width: 100%;
+  }
+
   .preference-services-page__subtitle {
     font-size: 14px;
   }
