@@ -144,6 +144,12 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrapper > main b {
+  opacity: 0.9;
 }
 
 .wrapper > * {
@@ -5420,7 +5426,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .services-page__filled-block {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .services-page__caption--aligned {
@@ -5429,7 +5435,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .services-page__item-list {
     gap: 15px;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .services-page__item-list:not(:last-child) {
@@ -5448,7 +5454,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .services-page__simple-text {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .services-page__simple-text--has-bg {
@@ -5458,11 +5464,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .services-page__simple-text--acceptance {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .services-page__simple-text--small {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .project-parts__item:first-child .project-parts__descr {
@@ -5482,15 +5488,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .dev-design-review__text {
     max-width: 463px;
-    font-size: 18px;
-  }
-
-  .preference-services-page__subtitle {
     font-size: 16px;
   }
 
+  .preference-services-page__subtitle {
+    font-size: 14px;
+  }
+
   .preference-services-page__item {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .preference-services-page__item::before {
@@ -5514,7 +5520,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .custom-list-service__block {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
@@ -6576,7 +6582,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     top: 30px;
     left: 30px;
     padding: 20px;
-    font-size: 16px;
+    font-size: 14px;
     border-radius: 3px;
     background: rgba(255, 255, 255, 0.9);
   }
@@ -11901,7 +11907,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .services-page__simple-text {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .services-page__simple-text--has-bg {
@@ -11909,7 +11915,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .services-page__simple-text--acceptance {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .services-page__simple-text--small {
@@ -11933,7 +11939,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .project-parts__title {
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .dev-design-review {
@@ -11982,7 +11988,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .preference-services-page__item::before {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .preference-services-page__item::after {
