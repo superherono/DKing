@@ -149,7 +149,7 @@ body {
 }
 
 .wrapper > main b {
-  opacity: 0.9;
+  font-weight: 500;
 }
 
 .wrapper > * {
