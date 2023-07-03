@@ -3882,6 +3882,10 @@ body::after {
   line-height: 130%;
 }
 
+.team-second__second-text:not(:last-child) {
+  margin-bottom: 5px;
+}
+
 .team-second__third-text {
   line-height: 1.2857142857;
 }
@@ -3976,6 +3980,11 @@ body::after {
   color: var(--white);
   font-weight: 300;
   background-color: #656364;
+}
+
+.services-page__filled-block i {
+  font-style: normal;
+  font-weight: 500;
 }
 
 .services-page__caption {
@@ -4155,8 +4164,10 @@ body::after {
   background-color: var(--yellow);
 }
 
+.examples-360__item iframe,
 .examples-360__item img {
-  max-width: 100%;
+  aspect-ratio: 1/1;
+  width: 100%;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
@@ -5509,9 +5520,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .examples-360__items {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
 
@@ -7684,6 +7696,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     margin-top: 100px;
   }
 
+  .team-second__block:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
   .team-second__col {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 37.5%;
@@ -7717,8 +7733,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .team-second__second-text {
     max-width: 55.8333333333%;
-    margin-top: -35px;
-    margin-bottom: 5px;
+    margin-top: -75px;
   }
 
   .team-second__third-text {
@@ -7755,8 +7770,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .examples-360 {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 26.6625615764% auto;
-    grid-template-columns: 26.6625615764% auto;
+    -ms-grid-columns: 26.6625615764% 65.763546798%;
+    grid-template-columns: 26.6625615764% 65.763546798%;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -10049,6 +10064,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
             order: 3;
   }
 
+  .team-second__block:not(:last-child) {
+    margin-bottom: 25px;
+  }
+
   .team-second__col {
     max-width: 500px;
   }
@@ -10077,7 +10096,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .team-second__second-text {
-    margin-bottom: 25px;
     padding-top: 20px;
   }
 
