@@ -9999,11 +9999,10 @@ PERFORMANCE OF THIS SOFTWARE.
                         plugins: [ lg_thumbnail_min ],
                         licenseKey: "7EC452A9-0CFD441C-BD984C7C-17C8456E",
                         speed: 800,
-                        selector: ".portfolio-single__image-ibg",
-                        thumbWidth: "210",
+                        thumbnail: true,
+                        thumbWidth: 210,
                         thumbHeight: "130px",
-                        animateThumb: false,
-                        addClass: "lg-custom-thumbnails"
+                        loop: false
                     })
                 });
             }));
