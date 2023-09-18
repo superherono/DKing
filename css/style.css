@@ -2684,7 +2684,7 @@ body::after {
 .aditional-services__row::before {
   content: "";
   position: absolute;
-  top: 0px;
+  top: -1px;
   left: 0;
   width: 100%;
   height: 0.03125rem;
@@ -8678,7 +8678,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
 @media (min-width: 82.5em) and (min-width: 120em) {
   .header__body::before {
-    left: 13.875rem;
+    left: 13.8125rem;
   }
 
   .wrapper--single .header__body::before {
@@ -13487,15 +13487,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 
 @media (min-width: 82.5em) and (min-width: 105.9375em) and (max-width: 120em) {
-@supports (left: clamp( 4.375rem , -67.1916666667rem  +  67.5555555556vw , 13.875rem )) {
+@supports (left: clamp( 4.375rem , -66.7208333333rem  +  67.1111111111vw , 13.8125rem )) {
     .header__body::before {
-      left: clamp( 4.375rem , -67.1916666667rem  +  67.5555555556vw , 13.875rem );
+      left: clamp( 4.375rem , -66.7208333333rem  +  67.1111111111vw , 13.8125rem );
     }
 }
 
-@supports not (left: clamp( 4.375rem , -67.1916666667rem  +  67.5555555556vw , 13.875rem )) {
+@supports not (left: clamp( 4.375rem , -66.7208333333rem  +  67.1111111111vw , 13.8125rem )) {
     .header__body::before {
-      left: calc(4.375rem + 9.5 * (100vw - 105.9375rem) / 14.0625);
+      left: calc(4.375rem + 9.4375 * (100vw - 105.9375rem) / 14.0625);
     }
 }
 
