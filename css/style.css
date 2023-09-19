@@ -8678,7 +8678,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
 @media (min-width: 82.5em) and (min-width: 120em) {
   .header__body::before {
-    left: 13.8125rem;
+    left: 13.84375rem;
   }
 
   .wrapper--single .header__body::before {
@@ -13487,15 +13487,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 
 @media (min-width: 82.5em) and (min-width: 105.9375em) and (max-width: 120em) {
-@supports (left: clamp( 4.375rem , -66.7208333333rem  +  67.1111111111vw , 13.8125rem )) {
+@supports (left: clamp( 4.375rem , -66.95625rem  +  67.3333333333vw , 13.84375rem )) {
     .header__body::before {
-      left: clamp( 4.375rem , -66.7208333333rem  +  67.1111111111vw , 13.8125rem );
+      left: clamp( 4.375rem , -66.95625rem  +  67.3333333333vw , 13.84375rem );
     }
 }
 
-@supports not (left: clamp( 4.375rem , -66.7208333333rem  +  67.1111111111vw , 13.8125rem )) {
+@supports not (left: clamp( 4.375rem , -66.95625rem  +  67.3333333333vw , 13.84375rem )) {
     .header__body::before {
-      left: calc(4.375rem + 9.4375 * (100vw - 105.9375rem) / 14.0625);
+      left: calc(4.375rem + 9.46875 * (100vw - 105.9375rem) / 14.0625);
     }
 }
 
