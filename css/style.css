@@ -8681,6 +8681,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     left: 13.875rem;
   }
 
+  .wrapper--team .header__body::before {
+    left: 13.9375rem;
+  }
+
   .wrapper--single .header__body::before {
     left: 14.0625rem;
   }
@@ -13500,6 +13504,18 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 
 @supports (left: clamp( 4.375rem , -67.6625rem  +  68vw , 13.9375rem )) {
+    .wrapper--team .header__body::before {
+      left: clamp( 4.375rem , -67.6625rem  +  68vw , 13.9375rem );
+    }
+}
+
+@supports not (left: clamp( 4.375rem , -67.6625rem  +  68vw , 13.9375rem )) {
+    .wrapper--team .header__body::before {
+      left: calc(4.375rem + 9.5625 * (100vw - 105.9375rem) / 14.0625);
+    }
+}
+
+@supports (left: clamp( 4.375rem , -67.6625rem  +  68vw , 13.9375rem )) {
     .wrapper--other .header__body::before {
       left: clamp( 4.375rem , -67.6625rem  +  68vw , 13.9375rem );
     }
@@ -13514,6 +13530,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
 @media (min-width: 82.5em) and (max-width: 105.9375em) {
   .header__body::before {
+    left: 4.375rem;
+  }
+
+  .wrapper--team .header__body::before {
     left: 4.375rem;
   }
 
