@@ -8702,7 +8702,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .wrapper--order .header__body::before {
-    left: 14.03125rem;
+    left: 14.0625rem;
   }
 
   .hero__body::before {
@@ -13579,15 +13579,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     }
 }
 
-@supports (left: clamp( 9rem , -2.06875rem  +  13.4166666667vw , 14.03125rem )) {
+@supports (left: clamp( 9rem , -2.1375rem  +  13.5vw , 14.0625rem )) {
     .wrapper--order .header__body::before {
-      left: clamp( 9rem , -2.06875rem  +  13.4166666667vw , 14.03125rem );
+      left: clamp( 9rem , -2.1375rem  +  13.5vw , 14.0625rem );
     }
 }
 
-@supports not (left: clamp( 9rem , -2.06875rem  +  13.4166666667vw , 14.03125rem )) {
+@supports not (left: clamp( 9rem , -2.1375rem  +  13.5vw , 14.0625rem )) {
     .wrapper--order .header__body::before {
-      left: calc(9rem + 5.03125 * (100vw - 82.5rem) / 37.5);
+      left: calc(9rem + 5.0625 * (100vw - 82.5rem) / 37.5);
     }
 }
 
