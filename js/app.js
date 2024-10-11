@@ -3891,6 +3891,183 @@
                 pauseEvents(e);
             }));
         }
+        class Particle {
+            constructor(parent) {
+                this.parent = parent;
+                const {canvas} = parent;
+                this.position = {
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height
+                };
+                this.speed = {
+                    x: parent.calculateSpeedX(),
+                    y: parent.calculateSpeedY()
+                };
+                this.layer = Math.ceil(3 * Math.random());
+                this.parallaxOffsetX = 0;
+                this.parallaxOffsetY = 0;
+                this.parallaxTargX = 0;
+                this.parallaxTargY = 0;
+                this.stackPos = 0;
+                this.active = true;
+            }
+            draw(ctx) {
+                const {particleRadius, curvedLines, proximity, dotColor, lineColor} = this.parent.props;
+                ctx.fillStyle = dotColor;
+                ctx.beginPath();
+                ctx.arc(this.position.x + this.parallaxOffsetX, this.position.y + this.parallaxOffsetY, particleRadius / 2, 0, 2 * Math.PI, true);
+                ctx.closePath();
+                ctx.fill();
+                ctx.strokeStyle = lineColor;
+                for (let i = this.parent.particles.length - 1; i > this.stackPos; i--) {
+                    const p2 = this.parent.particles[i];
+                    const dist = this.parent.calculateDistance(this.position, p2.position);
+                    if (dist < proximity) {
+                        ctx.beginPath();
+                        ctx.moveTo(this.position.x + this.parallaxOffsetX, this.position.y + this.parallaxOffsetY);
+                        if (curvedLines) ctx.quadraticCurveTo(p2.position.x, p2.position.y, p2.position.x + p2.parallaxOffsetX, p2.position.y + p2.parallaxOffsetY); else ctx.lineTo(p2.position.x + p2.parallaxOffsetX, p2.position.y + p2.parallaxOffsetY);
+                        ctx.stroke();
+                        ctx.closePath();
+                    }
+                }
+            }
+            updatePosition() {
+                const {parallax, parallaxMultiplier} = this.parent.props;
+                const {canvas} = this.parent;
+                if (parallax) {
+                    const pointerX = this.parent.hasOrientationSupport && !this.parent.isDesktop ? this.parent.mapTilt(this.parent.tiltX, window.innerWidth) : this.parent.mouseX;
+                    const pointerY = this.parent.hasOrientationSupport && !this.parent.isDesktop ? this.parent.mapTilt(this.parent.tiltY, window.innerHeight) : this.parent.mouseY;
+                    this.parallaxTargX = (pointerX - canvas.width / 2) / (parallaxMultiplier * this.layer);
+                    this.parallaxOffsetX += (this.parallaxTargX - this.parallaxOffsetX) / 10;
+                    this.parallaxTargY = (pointerY - canvas.height / 2) / (parallaxMultiplier * this.layer);
+                    this.parallaxOffsetY += (this.parallaxTargY - this.parallaxOffsetY) / 10;
+                }
+                this.position.x = this.parent.updatePositionForAxis(this.position.x, this.speed.x, this.parallaxOffsetX, canvas.width);
+                this.position.y = this.parent.updatePositionForAxis(this.position.y, this.speed.y, this.parallaxOffsetY, canvas.height);
+            }
+        }
+        class ParticleGround {
+            constructor(canvas, options = {}) {
+                this.defaultProps = {
+                    minSpeedX: .1,
+                    maxSpeedX: .7,
+                    minSpeedY: .1,
+                    maxSpeedY: .7,
+                    directionX: "center",
+                    directionY: "center",
+                    density: 1e4,
+                    dotColor: "#666666",
+                    lineColor: "#666666",
+                    particleRadius: 7,
+                    lineWidth: 1,
+                    curvedLines: false,
+                    proximity: 100,
+                    parallax: true,
+                    parallaxMultiplier: 5,
+                    onInit: () => {},
+                    onDestroy: () => {}
+                };
+                this.props = {
+                    ...this.defaultProps,
+                    ...options
+                };
+                this.canvas = canvas;
+                this.ctx = this.canvas.getContext("2d");
+                this.particles = [];
+                this.mouseX = 0;
+                this.mouseY = 0;
+                this.tiltX = 0;
+                this.tiltY = 0;
+                this.paused = false;
+                this.isDesktop = !navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|BB10|mobi|tablet|opera mini|nexus 7)/i);
+                this.hasOrientationSupport = "DeviceOrientationEvent" in window;
+                this.init();
+            }
+            init() {
+                this.resizeCanvas();
+                this.initParticles();
+                this.startAnimation();
+                this.attachEventListeners();
+                this.props.onInit();
+            }
+            resizeCanvas() {
+                this.canvas.width = this.canvas.parentElement.offsetWidth || window.innerWidth;
+                this.canvas.height = this.canvas.parentElement.offsetHeight || window.innerHeight;
+            }
+            initParticles() {
+                const {density} = this.props;
+                const numParticles = Math.round(this.canvas.width * this.canvas.height / density);
+                this.particles = [];
+                for (let i = 0; i < numParticles; i++) {
+                    const particle = new Particle(this);
+                    particle.stackPos = i;
+                    this.particles.push(particle);
+                }
+            }
+            calculateSpeedX() {
+                return this.calculateSpeed(this.props.directionX, this.props.minSpeedX, this.props.maxSpeedX);
+            }
+            calculateSpeedY() {
+                return this.calculateSpeed(this.props.directionY, this.props.minSpeedY, this.props.maxSpeedY);
+            }
+            calculateSpeed(direction, minSpeed, maxSpeed) {
+                let speed = "left" === direction || "up" === direction ? -maxSpeed + Math.random() * (maxSpeed - minSpeed) : Math.random() * (maxSpeed - minSpeed) + minSpeed;
+                if ("center" === direction) {
+                    speed = -maxSpeed / 2 + Math.random() * maxSpeed;
+                    speed += speed > 0 ? minSpeed : -minSpeed;
+                }
+                return speed;
+            }
+            calculateDistance(pos1, pos2) {
+                const a = pos1.x - pos2.x;
+                const b = pos1.y - pos2.y;
+                return Math.sqrt(a * a + b * b);
+            }
+            updatePositionForAxis(position, speed, parallaxOffset, canvasSize) {
+                if (position + speed + parallaxOffset > canvasSize) return 0 - parallaxOffset; else if (position + speed + parallaxOffset < 0) return canvasSize - parallaxOffset;
+                return position + speed;
+            }
+            startAnimation() {
+                const draw = () => {
+                    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                    this.particles.forEach((particle => particle.updatePosition()));
+                    this.particles.forEach((particle => particle.draw(this.ctx)));
+                    if (!this.paused) requestAnimationFrame(draw);
+                };
+                draw();
+            }
+            attachEventListeners() {
+                window.addEventListener("resize", (() => this.resizeCanvas()));
+                document.addEventListener("mousemove", (e => {
+                    this.mouseX = e.pageX;
+                    this.mouseY = e.pageY;
+                }));
+                if (this.hasOrientationSupport && !this.isDesktop) window.addEventListener("deviceorientation", (e => {
+                    this.tiltY = Math.min(Math.max(-e.beta, -30), 30);
+                    this.tiltX = Math.min(Math.max(-e.gamma, -30), 30);
+                }));
+            }
+            mapTilt(tilt, dimension) {
+                return dimension / 60 * (tilt + 30);
+            }
+            destroy() {
+                this.props.onDestroy();
+                this.paused = true;
+            }
+        }
+        window.addEventListener("load", (function() {
+            setTimeout((function() {
+                const canvas = document.getElementById("particle-canvas");
+                if (window.innerWidth > 1500 && canvas) {
+                    new ParticleGround(canvas, {
+                        dotColor: "#dae7f3",
+                        lineColor: "#dae7f3",
+                        density: 8e3,
+                        particleRadius: 7
+                    });
+                }
+            }), 0);
+        }));
         let gotoblock_gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
             const targetBlockElement = document.querySelector(targetBlock);
             if (targetBlockElement) {
@@ -8060,7 +8237,26 @@
                     992: {
                         slidesPerView: 3,
                         spaceBetween: 40
+                    },
+                    1400: {
+                        slidesPerView: 4,
+                        spaceBetween: 40
                     }
+                },
+                on: {}
+            });
+            if (document.querySelector(".campaigns__items ") && window.innerWidth <= 768) new core(".campaigns__items ", {
+                modules: [ Pagination ],
+                observer: true,
+                observeParents: true,
+                spaceBetween: 20,
+                autoHeight: false,
+                speed: 800,
+                slidesPerView: 1,
+                spaceBetween: 20,
+                pagination: {
+                    el: ".campaigns__bullets",
+                    clickable: true
                 },
                 on: {}
             });
@@ -10242,16 +10438,6 @@ PERFORMANCE OF THIS SOFTWARE.
                         }
                     }));
                 }
-            } else {
-                const addServicesBtn = document.querySelector(".aditional-services__button");
-                const addServicesList = document.querySelector(".aditional-services__list");
-                if (addServicesList) {
-                    addServicesList.setAttribute("hidden", "");
-                    addServicesBtn.addEventListener("click", (function(e) {
-                        _slideToggle(addServicesList);
-                        addServicesBtn.classList.toggle("active");
-                    }));
-                }
             }
             if (window.innerWidth > 1100) {
                 const dotts = document.querySelectorAll(".step-procedure__inner");
@@ -10292,6 +10478,15 @@ PERFORMANCE OF THIS SOFTWARE.
                         let fileName = inputFile.files[0].name;
                         uploadText.textContent = `Выбран : ${fileName}`;
                     } else uploadText.textContent = `Выбрать файл`;
+                }));
+            }
+            const addServicesBtn = document.querySelector(".aditional-services__button");
+            const addServicesList = document.querySelector(".aditional-services__list");
+            if (addServicesList) {
+                addServicesList.setAttribute("hidden", "");
+                addServicesBtn.addEventListener("click", (function(e) {
+                    _slideToggle(addServicesList);
+                    addServicesBtn.classList.toggle("active");
                 }));
             }
             let notificationBtn = document.querySelector(".notification__show-form");
