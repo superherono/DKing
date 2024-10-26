@@ -7158,7 +7158,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     border-top: 0.03125rem solid var(--gray-dark);
   }
 
-  .page__section-team::after {
+  .wrapper--team .page__section-team::after {
     content: "";
     position: absolute;
     top: 141.5px;
@@ -7711,10 +7711,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
 @media (min-width: 47.99875em) and (min-width: 87em) {
   .campaigns__inner {
-    padding-bottom: 6.875rem;
-  }
-
-  .section-benefits__inner {
     padding-bottom: 6.875rem;
   }
 
@@ -15513,18 +15509,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 
 @supports (padding-bottom: clamp( 1.25rem , -0.4291044776rem  +  8.3955223881vw , 6.875rem )) {
-    .section-benefits__inner {
-      padding-bottom: clamp( 1.25rem , -0.4291044776rem  +  8.3955223881vw , 6.875rem );
-    }
-}
-
-@supports not (padding-bottom: clamp( 1.25rem , -0.4291044776rem  +  8.3955223881vw , 6.875rem )) {
-    .section-benefits__inner {
-      padding-bottom: calc(1.25rem + 5.625 * (100vw - 20rem) / 67);
-    }
-}
-
-@supports (padding-bottom: clamp( 1.25rem , -0.4291044776rem  +  8.3955223881vw , 6.875rem )) {
     .section-reviews__inner {
       padding-bottom: clamp( 1.25rem , -0.4291044776rem  +  8.3955223881vw , 6.875rem );
     }
@@ -15551,10 +15535,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
 @media (min-width: 47.99875em) and (max-width: 20em) {
   .campaigns__inner {
-    padding-bottom: 1.25rem;
-  }
-
-  .section-benefits__inner {
     padding-bottom: 1.25rem;
   }
 
