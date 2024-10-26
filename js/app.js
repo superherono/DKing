@@ -4060,8 +4060,8 @@
                 const canvas = document.getElementById("particle-canvas");
                 if (window.innerWidth > 1500 && canvas) {
                     new ParticleGround(canvas, {
-                        dotColor: "#dae7f3",
-                        lineColor: "#dae7f3",
+                        dotColor: "#c8c7c8",
+                        lineColor: "#c8c7c8",
                         density: 8e3,
                         particleRadius: 7
                     });
