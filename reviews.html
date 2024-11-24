@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20241026134025">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241124183043">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -351,14 +351,14 @@
 				<form action="#" class="popup__form form">
 					<div class="form__rows">
 						<div class="form__input">
-							<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="ФИО" class="input">
+							<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="ФИО" class="input" />
 						</div>
 						<div class="form__input">
-							<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Номер телефона" class="input">
+							<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Номер телефона" class="input" />
 						</div>
 					</div>
 					<div class="form__checkbox checkbox">
-						<input id="c_1" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+						<input id="c_1" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]" />
 						<label for="c_1" class="checkbox__label"><span class="checkbox__text">Согласие на обработку персональных данных</span></label>
 					</div>
 					<button type="submit" class="form__button">
@@ -385,17 +385,17 @@
 				<div class="destination__inner">
 					<div class="destination__top">
 						<div class="destination__map" data-da=".popup__text--destination, 768, last">
-							<picture><source srcset="img/map/map-cover.webp" type="image/webp"><img decoding="async" src="img/map/map-cover.jpg" alt=""></picture>
+							<picture><source srcset="img/map/map-cover.webp" type="image/webp"><img decoding="async" src="img/map/map-cover.jpg" alt="" /></picture>
 						</div>
 						<div class="destination__building">
-							<picture><source srcset="img/map/map-decor.webp" type="image/webp"><img decoding="async" src="img/map/map-decor.jpg" alt=""></picture>
+							<picture><source srcset="img/map/map-decor2.webp" type="image/webp"><img decoding="async" src="img/map/map-decor2.jpg" alt="" /></picture>
 						</div>
 					</div>
 					<div class="destination__bottom">
 						<div class="destination__info">
-							БЦ Виктория Олимп <br>
-							г. Санкт-Петербург, наб. Обводного канала, <br>
-							185М-12 <br>
+							БЦ Виктория Олимп <br />
+							г. Санкт-Петербург, наб. Обводного канала, <br />
+							185М-12 <br />
 						</div>
 						<div class="destination__phones">
 							<a href="tel:+79216481288" class="destination__phone">
@@ -430,9 +430,7 @@
 					<use xlink:href="img/icons/icons.svg#svg-close"></use>
 				</svg>
 			</button>
-			<div class="popup__text">
-
-			</div>
+			<div class="popup__text"></div>
 		</div>
 	</div>
 </div>
@@ -486,19 +484,19 @@
 					<div class="form-notification__rows">
 						<div class="form-notification__row">
 							<label class="form-notification__label" for="">Представьтесь, пожалуйста</label>
-							<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Имя" class="input">
+							<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Имя" class="input" />
 						</div>
 						<div class="form-notification__row">
 							<label class="form-notification__label" for="">Контактный телефон</label>
-							<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="+7 (921) " class="input js-phone">
+							<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="+7 (921) " class="input js-phone" />
 						</div>
 						<div class="form-notification__row">
 							<label class="form-notification__label" for="">Площадь объекта, м2</label>
-							<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="40" class="input">
+							<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="40" class="input" />
 						</div>
 						<div class="form-notification__row">
 							<label class="form-notification__label" for="">Адрес объекта или название ЖК</label>
-							<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Каскад" class="input">
+							<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Каскад" class="input" />
 						</div>
 						<div class="form-notification__row form-notification__select">
 							<label class="form-notification__label" for="">Тарифный план</label>
@@ -513,7 +511,7 @@
 								<span>Добавить фото/скан строительного плана</span>
 								<span class="js-upload-text">Выбрать файл</span>
 							</label>
-							<input id="file" autocomplete="off" type="file" name="form[]" data-error="Ошибка" placeholder="" class="input">
+							<input id="file" autocomplete="off" type="file" name="form[]" data-error="Ошибка" placeholder="" class="input" />
 						</div>
 					</div>
 					<button type="submit" class="form-notification__button">
@@ -523,7 +521,10 @@
 						</svg>
 					</button>
 				</form>
-				<p class="notification__mobile-text">Заявки принимаются <br> до 30 апреля 2023 года.</p>
+				<p class="notification__mobile-text">
+					Заявки принимаются <br />
+					до 30 апреля 2023 года.
+				</p>
 				<p class="notification__note">*скидки действуют для объектов от 40 кв.м по ТП «Standart» и ТП «Premium»</p>
 				<button type="submit" class="notification__show-form form-notification__button">
 					<span>Оставить заявку</span>
@@ -532,11 +533,11 @@
 					</svg>
 				</button>
 			</div>
-
 		</div>
 	</div>
-</div> -->
-	<script src="js/app.min.js?_v=20241026134025"></script>
+</div>
+ -->
+	<script src="js/app.min.js?_v=20241124183043"></script>
 </body>
 
 </html>
