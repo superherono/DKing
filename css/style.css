@@ -9621,7 +9621,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .wrapper--new-sections .header__body::before {
-    left: 14rem;
+    left: 13.96875rem;
   }
 
   .hero__body::before {
@@ -14861,15 +14861,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     }
 }
 
-@supports (left: clamp( 4.375rem , -68.1333333333rem  +  68.4444444444vw , 14rem )) {
+@supports (left: clamp( 4.375rem , -67.8979166667rem  +  68.2222222222vw , 13.96875rem )) {
     .wrapper--new-sections .header__body::before {
-      left: clamp( 4.375rem , -68.1333333333rem  +  68.4444444444vw , 14rem );
+      left: clamp( 4.375rem , -67.8979166667rem  +  68.2222222222vw , 13.96875rem );
     }
 }
 
-@supports not (left: clamp( 4.375rem , -68.1333333333rem  +  68.4444444444vw , 14rem )) {
+@supports not (left: clamp( 4.375rem , -67.8979166667rem  +  68.2222222222vw , 13.96875rem )) {
     .wrapper--new-sections .header__body::before {
-      left: calc(4.375rem + 9.625 * (100vw - 105.9375rem) / 14.0625);
+      left: calc(4.375rem + 9.59375 * (100vw - 105.9375rem) / 14.0625);
     }
 }
 }
