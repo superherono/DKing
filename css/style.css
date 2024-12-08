@@ -13115,7 +13115,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .order__decor-image {
-    height: 100vh;
+    height: 130vh;
+  }
+
+  .order__decor-image img {
+    -o-object-position: 0 -250px;
+       object-position: 0 -250px;
   }
 
   .order__wrapper {
