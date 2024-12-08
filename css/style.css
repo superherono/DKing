@@ -12865,7 +12865,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .item-campaigns:last-child .item-campaigns__image {
     right: 9px;
     top: 66px;
-    width: 157px;
   }
 
   .benefits__body {
@@ -13688,6 +13687,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .interior__label {
     font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 29.99875em) and (max-width: 34.37375em) {
+  .item-campaigns:last-child .item-campaigns__image {
+    width: 55.2816901408%;
   }
 }
 
