@@ -11023,15 +11023,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     right: 0;
     top: 0;
     overflow: auto;
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(1px);
+            backdrop-filter: blur(1px);
     padding: 3.75rem 1rem 1.5rem;
     -webkit-transition: -webkit-transform 0.5s ease-out 0s;
     transition: -webkit-transform 0.5s ease-out 0s;
     -o-transition: transform 0.5s ease-out 0s;
     transition: transform 0.5s ease-out 0s;
     transition: transform 0.5s ease-out 0s, -webkit-transform 0.5s ease-out 0s;
-    background-color: rgba(188, 188, 188, 0.2);
+    background-color: rgba(188, 188, 188, 0.75);
     -webkit-transform: translate(100%, 0px);
         -ms-transform: translate(100%, 0px);
             transform: translate(100%, 0px);
@@ -13116,7 +13116,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .order__decor-image {
-    height: 100dvh;
+    height: 100vh;
   }
 
   .order__wrapper {
@@ -13275,8 +13275,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .partners::before {
-    top: -58px;
-    height: calc(100% + 58px);
+    top: -60px;
+    height: calc(100% + 60px);
   }
 
   .partners__container {
